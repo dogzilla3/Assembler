@@ -32,9 +32,6 @@
     <ClInclude Include="paslex.h" />
     <ClInclude Include="pastkn.h" />
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="Test.txt" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{E7DA54B1-DB40-40FC-BFF9-CE55AE6E2871}</ProjectGuid>
