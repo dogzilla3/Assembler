@@ -1,3 +1,7 @@
 Added some stuff and stuff
 This is going to be merged something fierce
 This is a testy
+
+This is another test before merging
+blah blah blah
+from this guy...
