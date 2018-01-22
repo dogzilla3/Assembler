@@ -35,6 +35,21 @@
     <None Include="makepascal">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="chrlit.pas">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="comment.pas">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="test">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="threetic.pas">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="underscore.pas">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="paslex.h">

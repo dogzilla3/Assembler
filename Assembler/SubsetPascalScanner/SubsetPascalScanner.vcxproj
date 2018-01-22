@@ -22,11 +22,16 @@
     <ClCompile Include="pas.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="chrlit.pas" />
+    <None Include="comment.pas" />
     <None Include="input.pas" />
     <None Include="input.trc" />
     <None Include="makepas" />
     <None Include="makepascal" />
     <None Include="paslex.l" />
+    <None Include="test" />
+    <None Include="threetic.pas" />
+    <None Include="underscore.pas" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="paslex.h" />

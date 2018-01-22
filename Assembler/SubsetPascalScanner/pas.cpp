@@ -167,8 +167,7 @@ int main (int argc, char* argv[])
   FILE* inFile = fopen (ifn, "r"); if (!inFile) FileException (ifn);
   ofstream fout (ofn); if (!fout) FileException (ofn);
 
-  cout << "The input file is: " << ifn << endl;
-  cout << "The output file is: " << ofn << endl;
+  cout << "Input file: " << ifn << " Trace File: " << ofn << endl;
 
   Mgr (inFile, fout);
 
