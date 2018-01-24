@@ -5,7 +5,7 @@
  * Author: Gregory Levy
  * Student ID: *20444120
  * E-Mail: glevy@uco.edu
- * Course: CMSC 4173 – Translator Design
+ * Course: CMSC 4173 Â– Translator Design
  * CRN: 25838, Spring, 2018
  * Project: p02 - Subset Pascal Parser
  * Due: January 24, 2018
@@ -14,7 +14,7 @@
  * Author: William Bohanan
  * Student ID: *20276952
  * E-Mail: wbohanan@uco.edu
- * Course: CMSC 4173 – Translator Design
+ * Course: CMSC 4173 Â– Translator Design
  * CRN: 25838, Spring, 2018
  * Project: p02 - Subset Pascal Parser
  * Due: January 24, 2018
@@ -32,16 +32,14 @@ using namespace std;
 #include "paslex.h"
 #include "paspar.h"
 
-//yyerror(const char* m);
-
 extern ofstream tfs;
 extern int line;
 extern int col;
 
+void yyerror(const char* m);
 %}
-
 %union {
-	string* token;
+  string* token;
 }
 %token <token> PLUS
 %token <token> MINUS
@@ -96,7 +94,7 @@ program:
 	{tfs << endl << "#01 program -> program_head program_declarations program_body";
 	}
 program_head:
-	program id program_parameters SEMICOLON
+	PROGRAM ID program_parameters SEMICOLON
 	{tfs << endl << "#02 program_head -> program id program_parameters SEMICOLON";
 	}
 program_declarations:
@@ -111,7 +109,7 @@ program_parameters:
 	{tfs << endl << "#05 program_parameters -> EMPTY";
 	}
 program_parameters: 
-	LPAREN program_parameters RPAREN
+	LPAREN program_parameter_list RPAREN
 	{tfs << endl << "#06 program_parameters -> ( program_parameters )";
 	}
 program_parameter_list:
@@ -138,7 +136,7 @@ type:
 	{tfs << endl << "#12 type -> standard_type";
 	}
 type:
-	array LBRACKET INTLIT RANGE INTLIT RPAREN OF standard_type
+	ARRAY LBRACKET INTLIT RANGE INTLIT RPAREN OF standard_type
 	{tfs << endl << "#13 type -> array [ intlit .. intlit ] of standard_type";
 	}
 standard_type:
@@ -149,19 +147,19 @@ subprogram_declarations:
 	{tfs << endl << "#15 subprogram_declarations -> EMPTY";
 	}
 subprogram_declarations:
-	subprogram_declarations subprogram_declaration SEMICOLON
+	subprogram_declarations subprogram_declarations SEMICOLON
 	{tfs << endl << "#16 subprogram_declarations -> subprogram_declarations subprogram_declaration ;";
 	}
 subprogram_declarations:
 	subprogram_head declarations compound_statement
-	{tfs << endl << "#17 subprogram_declarations -> subprogram_head declarations compound_statement
+	{tfs << endl << "#17 subprogram_declarations -> subprogram_head declarations compound_statement";
 	}
 subprogram_head:
-	function id subprogram_parameters COLON standard_type SEMICOLON
+	FUNCTION ID subprogram_parameters COLON standard_type SEMICOLON
 	{tfs << endl << "#18 subprogram_head -> function id subprogram_parameters : standard_type ;";
 	}
 subprogram_head:
-	procedure ID subprogram_parameters SEMICOLON
+	PROCEDURE ID subprogram_parameters SEMICOLON
 	{tfs << endl << "#19 subprogram_head -> procedure ID subprogram_parameters ;";
 	}
 subprogram_parameters:
@@ -211,11 +209,11 @@ statement:
 	{tfs << endl << "#31 statement -> compound_statement";
 	}
 statement:
-	if expression then statement else statement
+	IF expression THEN statement ELSE statement
 	{tfs << endl << "#32 statement -> if expression then statement else statement";
 	}
 statement:
-	while expression do statement
+	WHILE expression DO statement
 	{tfs << endl << "#33 statement -> while expression do statement";
 	}
 variable:
@@ -223,7 +221,7 @@ variable:
 	{tfs << endl << "#34 variable -> ID";
 	}
 variable:
-	id LPAREN expression RPAREN
+	ID LPAREN expression RPAREN
 	{tfs << endl << "#35 variable -> id LPAREN expression RPAREN";
 	}
 procedure_statement:
@@ -343,7 +341,7 @@ factor:
 	{tfs << endl << "#64 factor -> ID RBRACKET expression RBRACKET";
 	}
 factor:
-	id LPAREN expression_list RPAREN
+	ID LPAREN expression_list RPAREN
 	{tfs << endl << "#65 factor -> id LPAREN expression_list RPAREN";
 	}
 factor:
@@ -366,3 +364,9 @@ factor:
 	CHRLIT
 	{tfs << endl << "#70 factor -> CHRLIT";
 	}
+%%
+void yyerror(const char* m)
+{
+	cout << endl << "line(" << line << ") col(" << col << ") " << m;
+	cout << endl; 
+}

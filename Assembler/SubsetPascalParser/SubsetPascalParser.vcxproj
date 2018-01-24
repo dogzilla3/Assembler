@@ -139,9 +139,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\SubsetPascalScanner\paslex.h" />
-    <ClInclude Include="..\SubsetPascalScanner\pastkn.h" />
+    <ClInclude Include="paslex.h" />
     <ClInclude Include="paspar.h" />
+    <ClInclude Include="pastkn.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="chrlit.pas" />

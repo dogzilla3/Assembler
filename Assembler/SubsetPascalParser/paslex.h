@@ -1,11 +1,11 @@
 #ifndef PASLEX_H
-#define PASLEX_H
+#define PASLEX_H 1
 
 #include <cstdio>
 #include <fstream>
 #include <iostream>
+#include <string>
 #include <map>
-#include "pastkn.h"
 
 using namespace std;
 

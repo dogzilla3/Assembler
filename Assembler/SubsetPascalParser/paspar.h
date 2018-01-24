@@ -26,14 +26,13 @@
 
 #include "paslex.h"
 
-#ifdef __cplusplus
+#ifndef __cplusplus
 extern "C"
 #endif
-int yyparse(void);
+int yyparse (void);
 #endif
-
 class Parser : public Scan {
 public:
-	Parser(FILE* i) :Scan(i) {}
+	Parser(FILE* i):Scan(i){}
 	int Parse(void) { return yyparse(); }
 };

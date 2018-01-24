@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\SubsetPascalScanner\paslex.h">
+    <ClInclude Include="pastkn.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\SubsetPascalScanner\pastkn.h">
+    <ClInclude Include="paslex.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="paspar.h">
@@ -35,12 +35,6 @@
     <None Include="input.pas">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="makepas">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="makepascal">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="realit.pas">
       <Filter>Resource Files</Filter>
     </None>
@@ -48,6 +42,12 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="underscore.pas">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="makepascal">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="makepas">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="paslex.l">

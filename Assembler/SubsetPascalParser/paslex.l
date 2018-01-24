@@ -121,7 +121,7 @@ Scan::Scan(FILE* i)
   yyin=i;
   reserveWords.insert (pair <string, int> ("and", 326));
   reserveWords.insert (pair <string, int> ("array", 327));
-  reserveWords.insert (pair <string, int> ("begin", 345))
+  reserveWords.insert (pair <string, int> ("begin", 345));
   reserveWords.insert (pair <string, int> ("div", 328));
   reserveWords.insert (pair <string, int> ("do", 329));
   reserveWords.insert (pair <string, int> ("else", 330));
