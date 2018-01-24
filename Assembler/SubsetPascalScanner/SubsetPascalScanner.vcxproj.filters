@@ -52,10 +52,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="paslex.h">
+    <ClInclude Include="pastkn.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="pastkn.h">
+    <ClInclude Include="paslex.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

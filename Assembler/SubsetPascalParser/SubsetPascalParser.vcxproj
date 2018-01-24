@@ -139,7 +139,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="Test.txt" />
+    <ClInclude Include="..\SubsetPascalScanner\paslex.h" />
+    <ClInclude Include="..\SubsetPascalScanner\pastkn.h" />
+    <ClInclude Include="paspar.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="chrlit.pas" />
+    <None Include="comment.pas" />
+    <None Include="input.pas" />
+    <None Include="makepas" />
+    <None Include="makepascal" />
+    <None Include="paslex.l" />
+    <None Include="paspar.y" />
+    <None Include="realit.pas" />
+    <None Include="threetic.pas" />
+    <None Include="underscore.pas" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pas.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
