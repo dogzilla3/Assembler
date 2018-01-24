@@ -27,6 +27,8 @@
 
 using namespace std;
 
+ofstream tfs;
+
 void CommandLineException (int max, int actual)
 {
   cout << endl;

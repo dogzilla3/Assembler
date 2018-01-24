@@ -27,7 +27,6 @@
 #include <fstream>
 #include <iomanip>
 #include <string>
-using namespace std;
 
 #include "paslex.h"
 #include "paspar.h"
@@ -36,11 +35,11 @@ extern ofstream tfs;
 extern int line;
 extern int col;
 
+using namespace std;
+
 void yyerror(const char* m);
 %}
-%union {
-  string* token;
-}
+%union { std::string* token; }
 %token <token> PLUS
 %token <token> MINUS
 %token <token> STAR

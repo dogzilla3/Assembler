@@ -29,7 +29,6 @@
 #include <fstream>
 #include <map>
 #include <iomanip>
-#include <string>
 #include "paslex.h"
 
 using namespace std;
@@ -45,8 +44,8 @@ struct comparer
 
 int tokenManager(int token);
 void badTokenException();
-static int col = 1;
-static int line = 1;
+int col = 1;
+int line = 1;
 map<string, int, comparer> reserveWords;
 %}
 

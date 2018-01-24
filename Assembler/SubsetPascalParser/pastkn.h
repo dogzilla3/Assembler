@@ -149,10 +149,9 @@ typedef union YYSTYPE YYSTYPE;
 union YYSTYPE
 {
 #line 41 "paspar.y" /* yacc.c:1909  */
+ string* token; 
 
-  string* token;
-
-#line 156 "y.tab.h" /* yacc.c:1909  */
+#line 155 "y.tab.h" /* yacc.c:1909  */
 };
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1
