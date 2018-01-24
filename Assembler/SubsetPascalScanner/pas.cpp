@@ -117,7 +117,7 @@ void printToken (int t, ostream& o, Scan L)
   o << " Spelling= '" << L.fetchSpelling () << "'" << endl;
 }
 
-void Mgr (FILE* i, ostream& o)
+void ScanMgr (FILE* i, ostream& o)
 {
   Scan L (i);
   for (;;)
@@ -169,7 +169,7 @@ int main (int argc, char* argv[])
 
   cout << "Input file: " << ifn << " Trace File: " << ofn << endl;
 
-  Mgr (inFile, fout);
+  ScanMgr (inFile, fout);
 
   fclose (inFile);
   fout.close ();

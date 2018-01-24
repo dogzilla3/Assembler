@@ -50,7 +50,14 @@ map<string, int, comparer> reserveWords;
 %}
 
 %%
-[{][^}]*[}]									{col+=strlen(yytext);}
+[{][^{]*[}]									{	for (int a=0;a<strlen(yytext);a++) {
+													col++;
+													if (yytext[a]=='\n') {
+														col=1;
+														line++;
+													}
+												}
+											}
 [ \t]+										{col+=strlen(yytext);}
 [\n]										{line++; col=1;}	
 [_a-zA-Z][_a-zA-Z0-9]*						{return(tokenManager(ID));}

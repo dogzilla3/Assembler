@@ -28,7 +28,7 @@
 
 using namespace std;
 
-ofstream tfs;
+ofstream fout;
 
 void CommandLineException (int max, int actual)
 {
@@ -116,24 +116,33 @@ void printToken (int t, ostream& o, Scan L)
     case TYPE:      o << "TYPE"; break;
     case VAR:       o << "VAR"; break;
     case WHILE:     o << "WHILE"; break;
-    case BEGIN_:     o << "BEGIN"; break;
+    case BEGIN_:    o << "BEGIN"; break;
   }
   o << " Spelling= '" << L.fetchSpelling () << "'" << endl;
 }
 
-void Mgr (FILE* i, ostream& o)
+void ScanMgr (FILE* i, ostream& o)
 {
+  o  << "       **Start of Scan**" << endl << endl;
   Scan L (i);
-  Parser P (i);
-  /*for (;;)
+  for (;;)
   {
     int t = L.Lex ();
     if (t == 0) break;
     
     printToken (t, o, L);
-  }*/
+  }
+  o << endl << "       **End of Scan**" << endl << endl;
+  cout << "End of scan" << endl;
+}
 
+void ParseMgr (FILE* i, ostream& o)
+{
+  o << endl << "       **Start of Parse**" << endl << endl;
+  Parser P (i);
   P.Parse ();
+  o << endl << "       **End of Parse**" << endl << endl;
+  cout << "End of parse" << endl;
 }
 
 int main (int argc, char* argv[])
@@ -172,13 +181,16 @@ int main (int argc, char* argv[])
   strcat (ofn, ".trc");
 
   FILE* inFile = fopen (ifn, "r"); if (!inFile) FileException (ifn);
-  ofstream fout (ofn); if (!fout) FileException (ofn);
+  fout.open (ofn); if (!fout) FileException (ofn);
 
-  cout << "Input file: " << ifn << " Trace File: " << ofn << endl;
+  cout << "Input file: " << ifn << "  |  Trace File: " << ofn << endl;
 
-  Mgr (inFile, fout);
-
+  ScanMgr (inFile, fout);
   fclose (inFile);
+
+  inFile = fopen (ifn, "r"); if (!inFile) FileException (ifn);
+  ParseMgr (inFile, fout);
+
   fout.close ();
   return 0;
 }
