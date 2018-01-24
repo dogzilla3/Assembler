@@ -93,7 +93,7 @@ program:
 	{tfs << endl << "#01 program -> program_head program_declarations program_body";
 	}
 program_head:
-	PROGRAM ID program_parameters SEMICOLON
+	PROGRAM ID program_parameters SEMICOLON 
 	{tfs << endl << "#02 program_head -> program id program_parameters SEMICOLON";
 	}
 program_declarations:
@@ -222,6 +222,10 @@ variable:
 variable:
 	ID LPAREN expression RPAREN
 	{tfs << endl << "#35 variable -> id LPAREN expression RPAREN";
+	}
+variable:
+	variable PERIOD ID
+	{tfs << endl << "#** variable ->*******";
 	}
 procedure_statement:
 	ID
@@ -368,4 +372,8 @@ void yyerror(const char* m)
 {
 	cout << endl << "line(" << line << ") col(" << col << ") " << m;
 	cout << endl; 
+}
+
+void Parse(){
+
 }

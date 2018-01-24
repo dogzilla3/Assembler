@@ -50,11 +50,11 @@ map<string, int, comparer> reserveWords;
 %}
 
 %%
-"{"[^}]*"}"									{col+=strlen(yytext);}
+[{][^}]*[}]									{col+=strlen(yytext);}
 [ \t]+										{col+=strlen(yytext);}
 [\n]										{line++; col=1;}	
-([a-zA-Z]|_)[a-zA-Z0-9]*					{return(tokenManager(ID));}
-[']([^']|[']['])*[']						{return(tokenManager(CHRLIT));}
+[_a-zA-Z][_a-zA-Z0-9]*						{return(tokenManager(ID));}
+[']([^']|(\'\'))([^']|(\'\'))+[']			{return(tokenManager(CHRLIT));} 
 [0-9]+										{return(tokenManager(INTLIT));}
 [0-9]+([eE][0-9]+)?							{return(tokenManager(REALIT));}
 [0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?			{return(tokenManager(REALIT));}
@@ -118,30 +118,33 @@ int tokenManager(int T)
 Scan::Scan(FILE* i)
 { 
   yyin=i;
-  reserveWords.insert (pair <string, int> ("and", 326));
-  reserveWords.insert (pair <string, int> ("array", 327));
-  reserveWords.insert (pair <string, int> ("begin", 345));
-  reserveWords.insert (pair <string, int> ("div", 328));
-  reserveWords.insert (pair <string, int> ("do", 329));
-  reserveWords.insert (pair <string, int> ("else", 330));
-  reserveWords.insert (pair <string, int> ("end", 331));
-  reserveWords.insert (pair <string, int> ("function", 332));
-  reserveWords.insert (pair <string, int> ("if", 333));
-  reserveWords.insert (pair <string, int> ("mod", 334));
-  reserveWords.insert (pair <string, int> ("not", 335));
-  reserveWords.insert (pair <string, int> ("of", 336));
-  reserveWords.insert (pair <string, int> ("or", 337));
-  reserveWords.insert (pair <string, int> ("procedure", 338));
-  reserveWords.insert (pair <string, int> ("program", 339));
-  reserveWords.insert (pair <string, int> ("then", 340));
-  reserveWords.insert (pair <string, int> ("to", 341));
-  reserveWords.insert (pair <string, int> ("type", 342));
-  reserveWords.insert (pair <string, int> ("var", 343));
-  reserveWords.insert (pair <string, int> ("while", 344));
-};
-
-
-int Scan::Lex(void)
+  reserveWords.insert (pair <string, int> ("and",	279));
+  reserveWords.insert (pair <string, int> ("array", 280));
+  reserveWords.insert (pair <string, int> ("begin", 281));
+  reserveWords.insert (pair <string, int> ("div", 282));
+  reserveWords.insert (pair <string, int> ("do", 283));
+  reserveWords.insert (pair <string, int> ("else", 284));
+  reserveWords.insert (pair <string, int> ("end", 285));
+  reserveWords.insert (pair <string, int> ("function", 286));
+  reserveWords.insert (pair <string, int> ("if", 287));
+  reserveWords.insert (pair <string, int> ("mod", 288));
+  reserveWords.insert (pair <string, int> ("not", 289));
+  reserveWords.insert (pair <string, int> ("of", 290));
+  reserveWords.insert (pair <string, int> ("or", 291));
+  reserveWords.insert (pair <string, int> ("procedure", 292));
+  reserveWords.insert (pair <string, int> ("program", 293));
+  reserveWords.insert (pair <string, int> ("then", 294));
+  reserveWords.insert (pair <string, int> ("to", 295));
+  reserveWords.insert (pair <string, int> ("type", 296));
+  reserveWords.insert (pair <string, int> ("var", 297));
+  reserveWords.insert (pair <string, int> ("while", 298));
+  reserveWords.insert (pair <string, int> ("id", 300));
+  reserveWords.insert (pair <string, int> ("intlit", 301));
+  reserveWords.insert (pair <string, int> ("realit", 302));
+  reserveWords.insert (pair <string, int> ("chrlit", 303));
+  reserveWords.insert (pair <string, int> ("comment", 304));
+}
+int Scan::Lex(void)						   
 { 
 	return tcode=yylex();
 }

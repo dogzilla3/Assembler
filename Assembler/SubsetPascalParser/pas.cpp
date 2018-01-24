@@ -24,6 +24,7 @@
 #include <iomanip>
 #include "pastkn.h"
 #include "paslex.h"
+#include "paspar.h"
 
 using namespace std;
 
@@ -100,7 +101,7 @@ void printToken (int t, ostream& o, Scan L)
     case ARRAY:     o << "ARRAY"; break;
     case DIV:       o << "DIV"; break;
     case DO:        o << "DO"; break;
-    case ELSE:      o << "ELSE"; break;
+    case ELSE:      o << "ELSE"; break; 
     case END:       o << "END"; break;
     case FUNCTION:  o << "FUNCTION"; break;
     case IF:        o << "IF"; break;
@@ -115,6 +116,7 @@ void printToken (int t, ostream& o, Scan L)
     case TYPE:      o << "TYPE"; break;
     case VAR:       o << "VAR"; break;
     case WHILE:     o << "WHILE"; break;
+    case BEGIN_:     o << "BEGIN"; break;
   }
   o << " Spelling= '" << L.fetchSpelling () << "'" << endl;
 }
@@ -122,13 +124,16 @@ void printToken (int t, ostream& o, Scan L)
 void Mgr (FILE* i, ostream& o)
 {
   Scan L (i);
-  for (;;)
+  Parser P (i);
+  /*for (;;)
   {
     int t = L.Lex ();
     if (t == 0) break;
     
     printToken (t, o, L);
-  }
+  }*/
+
+  P.Parse ();
 }
 
 int main (int argc, char* argv[])
