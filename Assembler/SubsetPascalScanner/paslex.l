@@ -55,7 +55,7 @@ map<string, int, comparer> reserveWords;
 [ \t]+										{col+=strlen(yytext);}
 [\n]										{line++; col=1;}	
 ([a-zA-Z]|_)[a-zA-Z0-9]*					{return(tokenManager(ID));}
-[']([^']|(\'\'))[']						{return(tokenManager(CHRLIT));}
+[']([^']|(\'\'))*[']							{return(tokenManager(CHRLIT));}
 [0-9]+										{return(tokenManager(INTLIT));}
 [0-9]+([eE][0-9]+)?							{return(tokenManager(REALIT));}
 [0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?			{return(tokenManager(REALIT));}
