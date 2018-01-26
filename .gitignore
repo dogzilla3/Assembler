@@ -4,6 +4,7 @@
 # Our compiler specific ignores
 *.sln
 *.vcxproj
+*.vcxproj.filters
 
 # User-specific files
 *.suo
