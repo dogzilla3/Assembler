@@ -1,0 +1,110 @@
+       **Start of Scan**
+
+Token: Code=293  Line= 12  Col= 8    Name= PROGRAM      Spelling= 'program'
+Token: Code=300  Line= 12  Col= 17   Name= ID           Spelling= 'p066_000'
+Token: Code=265  Line= 12  Col= 18   Name= SEMICOLON    Spelling= ';'
+Token: Code=297  Line= 13  Col= 6    Name= VAR          Spelling= 'var'
+Token: Code=300  Line= 13  Col= 8    Name= ID           Spelling= 'c'
+Token: Code=266  Line= 13  Col= 9    Name= COLON        Spelling= ':'
+Token: Code=300  Line= 13  Col= 13   Name= ID           Spelling= 'real'
+Token: Code=265  Line= 13  Col= 14   Name= SEMICOLON    Spelling= ';'
+Token: Code=286  Line= 14  Col= 11   Name= FUNCTION     Spelling= 'function'
+Token: Code=300  Line= 14  Col= 19   Name= ID           Spelling= 'celsius'
+Token: Code=273  Line= 14  Col= 20   Name= LPAREN       Spelling= '('
+Token: Code=300  Line= 14  Col= 21   Name= ID           Spelling= 'f'
+Token: Code=266  Line= 14  Col= 22   Name= COLON        Spelling= ':'
+Token: Code=300  Line= 14  Col= 26   Name= ID           Spelling= 'real'
+Token: Code=274  Line= 14  Col= 27   Name= RPAREN       Spelling= ')'
+Token: Code=266  Line= 14  Col= 28   Name= COLON        Spelling= ':'
+Token: Code=300  Line= 14  Col= 32   Name= ID           Spelling= 'real'
+Token: Code=265  Line= 14  Col= 33   Name= SEMICOLON    Spelling= ';'
+Token: Code=281  Line= 15  Col= 8    Name= BEGIN        Spelling= 'begin'
+Token: Code=300  Line= 16  Col= 12   Name= ID           Spelling= 'celsius'
+Token: Code=262  Line= 16  Col= 14   Name= ASSIGN       Spelling= ':='
+Token: Code=301  Line= 16  Col= 15   Name= INTLIT       Spelling= '5'
+Token: Code=260  Line= 16  Col= 16   Name= STAR         Spelling= '*'
+Token: Code=273  Line= 16  Col= 17   Name= LPAREN       Spelling= '('
+Token: Code=300  Line= 16  Col= 18   Name= ID           Spelling= 'f'
+Token: Code=259  Line= 16  Col= 19   Name= MINUS        Spelling= '-'
+Token: Code=301  Line= 16  Col= 21   Name= INTLIT       Spelling= '32'
+Token: Code=274  Line= 16  Col= 22   Name= RPAREN       Spelling= ')'
+Token: Code=261  Line= 16  Col= 23   Name= SLASH        Spelling= '/'
+Token: Code=301  Line= 16  Col= 24   Name= INTLIT       Spelling= '9'
+Token: Code=285  Line= 17  Col= 6    Name= END          Spelling= 'end'
+Token: Code=265  Line= 17  Col= 16   Name= SEMICOLON    Spelling= ';'
+Token: Code=281  Line= 18  Col= 6    Name= BEGIN        Spelling= 'begin'
+Token: Code=300  Line= 19  Col= 4    Name= ID           Spelling= 'c'
+Token: Code=262  Line= 19  Col= 6    Name= ASSIGN       Spelling= ':='
+Token: Code=300  Line= 19  Col= 13   Name= ID           Spelling= 'celsius'
+Token: Code=273  Line= 19  Col= 14   Name= LPAREN       Spelling= '('
+Token: Code=301  Line= 19  Col= 16   Name= INTLIT       Spelling= '77'
+Token: Code=274  Line= 19  Col= 17   Name= RPAREN       Spelling= ')'
+Token: Code=285  Line= 20  Col= 4    Name= END          Spelling= 'end'
+Token: Code=263  Line= 20  Col= 15   Name= PERIOD       Spelling= '.'
+
+       **End of Scan**
+
+
+       **Start of Parse**
+
+
+#05 program_parameters -> EMPTY
+#02 program_head -> program id program_parameters SEMICOLON
+#10 declarations -> EMPTY
+#08 identifier_list -> ID
+#14 standard_type -> ID
+#12 type -> standard_type
+#11 declarations -> declarations VAR identifier_list : type SEMICOLON
+#15 subprogram_declarations -> EMPTY
+#08 identifier_list -> ID
+#14 standard_type -> ID
+#12 type -> standard_type
+#22 parameter_list -> identifier_list : type
+#21 subprogram_parameters -> ( parameter_list )
+#14 standard_type -> ID
+#18 subprogram_head -> function id subprogram_parameters : standard_type ;
+#10 declarations -> EMPTY
+#34 variable -> ID
+#68 factor -> INTLIT
+#56 term -> factor
+#58 mulop -> *
+#63 factor -> ID
+#56 term -> factor
+#48 simple_expression -> term
+#54 addop -> -
+#68 factor -> INTLIT
+#56 term -> factor
+#50 simple_expression -> simple_expression addop term
+#40 expression -> simple_expression
+#66 mulop -> LPAREN expression RPAREN
+#57 term -> term mulop factor
+#59 mulop -> /
+#68 factor -> INTLIT
+#57 term -> term mulop factor
+#48 simple_expression -> term
+#40 expression -> simple_expression
+#29 statement -> variable := expression
+#27 statement_list -> statement
+#26 optional_statements -> statement_list
+#24 compound_statement -> BEGIN optional_statements END
+#17 subprogram_declarations -> subprogram_head declarations compound_statement
+#16 subprogram_declarations -> subprogram_declarations subprogram_declaration ;
+#03 program_declarations -> declarations subprogram_declarations
+#34 variable -> ID
+#68 factor -> INTLIT
+#56 term -> factor
+#48 simple_expression -> term
+#40 expression -> simple_expression
+#38 expression_list -> expression
+#65 factor -> id LPAREN expression_list RPAREN
+#56 term -> factor
+#48 simple_expression -> term
+#40 expression -> simple_expression
+#29 statement -> variable := expression
+#27 statement_list -> statement
+#26 optional_statements -> statement_list
+#24 compound_statement -> BEGIN optional_statements END
+#04 program_body -> compound_statement PERIOD
+#01 program -> program_head program_declarations program_body
+       **End of Parse**
+

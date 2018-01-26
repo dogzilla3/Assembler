@@ -1,0 +1,55 @@
+       **Start of Scan**
+
+Token: Code=293  Line= 12  Col= 8    Name= PROGRAM      Spelling= 'program'
+Token: Code=300  Line= 12  Col= 17   Name= ID           Spelling= 'p020_000'
+Token: Code=265  Line= 12  Col= 18   Name= SEMICOLON    Spelling= ';'
+Token: Code=292  Line= 13  Col= 12   Name= PROCEDURE    Spelling= 'procedure'
+Token: Code=300  Line= 13  Col= 18   Name= ID           Spelling= 'hello'
+Token: Code=265  Line= 13  Col= 19   Name= SEMICOLON    Spelling= ';'
+Token: Code=281  Line= 14  Col= 8    Name= BEGIN        Spelling= 'begin'
+Token: Code=300  Line= 15  Col= 12   Name= ID           Spelling= 'writeln'
+Token: Code=273  Line= 15  Col= 13   Name= LPAREN       Spelling= '('
+Token: Code=303  Line= 15  Col= 33   Name= CHRLIT       Spelling= ''Hello, I love you.''
+Token: Code=274  Line= 15  Col= 34   Name= RPAREN       Spelling= ')'
+Token: Code=285  Line= 16  Col= 6    Name= END          Spelling= 'end'
+Token: Code=265  Line= 16  Col= 14   Name= SEMICOLON    Spelling= ';'
+Token: Code=281  Line= 17  Col= 6    Name= BEGIN        Spelling= 'begin'
+Token: Code=300  Line= 18  Col= 8    Name= ID           Spelling= 'hello'
+Token: Code=285  Line= 19  Col= 4    Name= END          Spelling= 'end'
+Token: Code=263  Line= 19  Col= 15   Name= PERIOD       Spelling= '.'
+
+       **End of Scan**
+
+
+       **Start of Parse**
+
+
+#05 program_parameters -> EMPTY
+#02 program_head -> program id program_parameters SEMICOLON
+#10 declarations -> EMPTY
+#15 subprogram_declarations -> EMPTY
+#20 subprogram_parameters -> EMPTY
+#19 subprogram_head -> procedure ID subprogram_parameters ;
+#10 declarations -> EMPTY
+#70 factor -> CHRLIT
+#56 term -> factor
+#48 simple_expression -> term
+#40 expression -> simple_expression
+#38 expression_list -> expression
+#37 ID ( expression_list )
+#30 statement -> procedure_statement
+#27 statement_list -> statement
+#26 optional_statements -> statement_list
+#24 compound_statement -> BEGIN optional_statements END
+#17 subprogram_declarations -> subprogram_head declarations compound_statement
+#16 subprogram_declarations -> subprogram_declarations subprogram_declaration ;
+#03 program_declarations -> declarations subprogram_declarations
+#36 procedure_statement -> ID
+#30 statement -> procedure_statement
+#27 statement_list -> statement
+#26 optional_statements -> statement_list
+#24 compound_statement -> BEGIN optional_statements END
+#04 program_body -> compound_statement PERIOD
+#01 program -> program_head program_declarations program_body
+       **End of Parse**
+

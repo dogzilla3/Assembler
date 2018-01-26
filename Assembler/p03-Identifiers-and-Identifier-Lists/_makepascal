@@ -1,0 +1,54 @@
+#------------------------------------------------------------------------------
+#Author: Gregory Levy
+#Student ID: *20444120
+#E-Mail: glevy@uco.edu
+#Course: CMSC 2123 – Discrete Structures
+#CRN: 21061, Spring, 2017
+#Project: p02
+#Due: February 10, 2017
+#Account: tt049
+#
+#Author: William Bohanan
+#Student ID: *20276952
+#E-Mail: wbohanan@uco.edu
+#Course: CMSC 4173 – Translator Design
+#CRN: 25838, Spring, 2018
+#Project: p02
+#Due: February 10, 2017
+#Account: tt067
+#-------------------------------------------------------------------------------
+
+#----------------------------------------------------------------------
+obj	=	paspar.o	\
+		paslex.o	\
+		pas.o
+#----------------------------------------------------------------------
+# Bind the subset Pascal Scanneer
+#----------------------------------------------------------------------
+pas:	${obj}
+	g++ -o pas ${obj} -ll
+#----------------------------------------------------------------------
+# File mcr.cpp processes command line arguments
+#----------------------------------------------------------------------
+pas.o:	pas.cpp paslex.h
+	g++ -c -g pas.cpp
+#----------------------------------------------------------------------
+# File mcrlex.cpp is the lex-generated scanner
+#----------------------------------------------------------------------
+paslex.cpp:	paslex.l paslex.h
+		lex paslex.l
+		mv lex.yy.c paslex.cpp
+#----------------------------------------------------------------------
+paslex.o: 	paslex.cpp paslex.h
+		g++ -c -g paslex.cpp
+#----------------------------------------------------------------------
+pastkn.h	\
+paspar.cpp:	paspar.y
+			yacc -d -v paspar.y
+			mv y.tab.c paspar.cpp
+			mv y.tab.h pastkn.h
+#----------------------------------------------------------------------
+paspar.o:	paspar.cpp paspar.h
+			g++ -c -g paspar.cpp
+#----------------------------------------------------------------------
+		
