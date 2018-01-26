@@ -135,7 +135,7 @@ type:
 	{fout << endl << "#12 type -> standard_type";
 	}
 type:
-	ARRAY LBRACKET INTLIT RANGE INTLIT RPAREN OF standard_type
+	ARRAY LBRACKET INTLIT RANGE INTLIT RBRACKET OF standard_type
 	{fout << endl << "#13 type -> array [ intlit .. intlit ] of standard_type";
 	}
 standard_type:
@@ -220,12 +220,8 @@ variable:
 	{fout << endl << "#34 variable -> ID";
 	}
 variable:
-	ID LPAREN expression RPAREN
+	ID LBRACKET expression RBRACKET
 	{fout << endl << "#35 variable -> id LPAREN expression RPAREN";
-	}
-variable:
-	variable PERIOD ID
-	{fout << endl << "#** variable ->*******";
 	}
 procedure_statement:
 	ID
