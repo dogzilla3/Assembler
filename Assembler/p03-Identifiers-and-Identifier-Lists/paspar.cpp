@@ -1497,7 +1497,7 @@ yyreduce:
   case 10:
 #line 131 "paspar.y" /* yacc.c:1646  */
     {fout << endl << "#09 identifier_list -> identifier_list , ID(" << (*(yyvsp[0].token)) << ")";
-	(yyval.strList)=id_list((yyvsp[-2].strList), (yyvsp[0].token));
+	(yyval.strList)=id_list((yyvsp[-2].strList),(yyvsp[0].token));
 	}
 #line 1503 "y.tab.c" /* yacc.c:1646  */
     break;
@@ -1511,7 +1511,7 @@ yyreduce:
 
   case 12:
 #line 139 "paspar.y" /* yacc.c:1646  */
-    {fout << endl << "#11 declarations -> declarations VAR identifier_list : type SEMICOLON";
+    {fout << endl << "#11 declarations -> declarations VAR identifier_list " << ((yyvsp[-3].strList))->printList() << " : type SEMICOLON";
 	}
 #line 1517 "y.tab.c" /* yacc.c:1646  */
     break;

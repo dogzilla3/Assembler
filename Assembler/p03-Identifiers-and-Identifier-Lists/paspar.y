@@ -129,14 +129,14 @@ identifier_list:
 identifier_list:
 	identifier_list COMMA ID
 	{fout << endl << "#09 identifier_list -> identifier_list , ID(" << (*$3) << ")";
-	$$=id_list($1, $3);
+	$$=id_list($1,$3);
 	}
 declarations:
 	{fout << endl << "#10 declarations -> EMPTY";
 	}
 declarations:
 	declarations VAR identifier_list COLON type SEMICOLON 
-	{fout << endl << "#11 declarations -> declarations VAR identifier_list : type SEMICOLON";
+	{fout << endl << "#11 declarations -> declarations VAR identifier_list " << ($3)->printList() << " : type SEMICOLON";
 	}
 type:
 	standard_type

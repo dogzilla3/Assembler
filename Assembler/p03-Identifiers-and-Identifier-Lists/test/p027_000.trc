@@ -6,60 +6,60 @@ Token: Code=293  Line= 12  Col= 8    Name= PROGRAM      Spelling= 'program'
 Token: Code=300  Line= 12  Col= 17   Name= ID           Spelling= 'p027_000'
 Token: Code=265  Line= 12  Col= 18   Name= SEMICOLON    Spelling= ';'
 #05 program_parameters -> EMPTY
-#02 program_head -> program ID(program) program_parameters SEMICOLON
+#02 program_head -> program ID(p027_000) program_parameters SEMICOLON
 #10 declarations -> EMPTY
 Token: Code=286  Line= 13  Col= 11   Name= FUNCTION     Spelling= 'function'
 #15 subprogram_declarations -> EMPTY
 Token: Code=300  Line= 13  Col= 15   Name= ID           Spelling= 'max'
 Token: Code=273  Line= 13  Col= 16   Name= LPAREN       Spelling= '('
 Token: Code=300  Line= 13  Col= 17   Name= ID           Spelling= 'a'
-#08 identifier_list -> ID(() identifier_list = {(
+#08 identifier_list -> ID(a) identifier_list ={a}
 Token: Code=264  Line= 13  Col= 18   Name= COMMA        Spelling= ','
 Token: Code=300  Line= 13  Col= 19   Name= ID           Spelling= 'b'
-#09 identifier_list -> identifier_list , ID(,) identifier_list = {(, ,
+#09 identifier_list -> identifier_list , ID(b) identifier_list ={a, b}
 Token: Code=266  Line= 13  Col= 20   Name= COLON        Spelling= ':'
 Token: Code=300  Line= 13  Col= 27   Name= ID           Spelling= 'integer'
-#14 standard_type -> ID(:)
+#14 standard_type -> ID(integer)
 #12 type -> standard_type
 #22 parameter_list -> identifier_list : type
 Token: Code=274  Line= 13  Col= 28   Name= RPAREN       Spelling= ')'
 #21 subprogram_parameters -> ( parameter_list )
 Token: Code=266  Line= 13  Col= 29   Name= COLON        Spelling= ':'
 Token: Code=300  Line= 13  Col= 36   Name= ID           Spelling= 'integer'
-#14 standard_type -> ID(:)
+#14 standard_type -> ID(integer)
 Token: Code=265  Line= 13  Col= 37   Name= SEMICOLON    Spelling= ';'
-#18 subprogram_head -> function ID(function) subprogram_parameters : standard_type ;
+#18 subprogram_head -> function ID(max) subprogram_parameters : standard_type ;
 #10 declarations -> EMPTY
 Token: Code=281  Line= 14  Col= 8    Name= BEGIN        Spelling= 'begin'
 Token: Code=287  Line= 15  Col= 7    Name= IF           Spelling= 'if'
 Token: Code=300  Line= 15  Col= 9    Name= ID           Spelling= 'a'
 Token: Code=271  Line= 15  Col= 10   Name= GRT          Spelling= '>'
-#63 factor -> ID(if)
+#63 factor -> ID(a)
 #56 term -> factor
 #48 simple_expression -> term
 #46 relop -> >
 Token: Code=300  Line= 15  Col= 11   Name= ID           Spelling= 'b'
 Token: Code=294  Line= 15  Col= 16   Name= THEN         Spelling= 'then'
-#63 factor -> ID(>)
+#63 factor -> ID(b)
 #56 term -> factor
 #48 simple_expression -> term
 #41 expression -> simple_expression relop simple_expression
 Token: Code=300  Line= 15  Col= 20   Name= ID           Spelling= 'max'
 Token: Code=262  Line= 15  Col= 22   Name= ASSIGN       Spelling= ':='
-#34 variable -> ID(then)
+#34 variable -> ID(max)
 Token: Code=300  Line= 15  Col= 23   Name= ID           Spelling= 'a'
 Token: Code=284  Line= 15  Col= 28   Name= ELSE         Spelling= 'else'
-#63 factor -> ID(:=)
+#63 factor -> ID(a)
 #56 term -> factor
 #48 simple_expression -> term
 #40 expression -> simple_expression
 #29 statement -> variable := expression
 Token: Code=300  Line= 15  Col= 32   Name= ID           Spelling= 'max'
 Token: Code=262  Line= 15  Col= 34   Name= ASSIGN       Spelling= ':='
-#34 variable -> ID(else)
+#34 variable -> ID(max)
 Token: Code=300  Line= 15  Col= 35   Name= ID           Spelling= 'b'
 Token: Code=285  Line= 16  Col= 6    Name= END          Spelling= 'end'
-#63 factor -> ID(:=)
+#63 factor -> ID(b)
 #56 term -> factor
 #48 simple_expression -> term
 #40 expression -> simple_expression
@@ -75,24 +75,24 @@ Token: Code=292  Line= 17  Col= 12   Name= PROCEDURE    Spelling= 'procedure'
 Token: Code=300  Line= 17  Col= 18   Name= ID           Spelling= 'print'
 Token: Code=273  Line= 17  Col= 19   Name= LPAREN       Spelling= '('
 Token: Code=300  Line= 17  Col= 20   Name= ID           Spelling= 'a'
-#08 identifier_list -> ID(() identifier_list = {(
+#08 identifier_list -> ID(a) identifier_list ={a}
 Token: Code=266  Line= 17  Col= 21   Name= COLON        Spelling= ':'
 Token: Code=300  Line= 17  Col= 28   Name= ID           Spelling= 'integer'
-#14 standard_type -> ID(:)
+#14 standard_type -> ID(integer)
 #12 type -> standard_type
 #22 parameter_list -> identifier_list : type
 Token: Code=265  Line= 17  Col= 29   Name= SEMICOLON    Spelling= ';'
 Token: Code=300  Line= 17  Col= 30   Name= ID           Spelling= 'b'
-#08 identifier_list -> ID(;) identifier_list = {;
+#08 identifier_list -> ID(b) identifier_list ={b}
 Token: Code=266  Line= 17  Col= 31   Name= COLON        Spelling= ':'
 Token: Code=300  Line= 17  Col= 38   Name= ID           Spelling= 'integer'
-#14 standard_type -> ID(:)
+#14 standard_type -> ID(integer)
 #12 type -> standard_type
 #23 parameter_list -> parameter_list ; identifier_list : type
 Token: Code=274  Line= 17  Col= 39   Name= RPAREN       Spelling= ')'
 #21 subprogram_parameters -> ( parameter_list )
 Token: Code=265  Line= 17  Col= 40   Name= SEMICOLON    Spelling= ';'
-#19 subprogram_head -> procedure ID(procedure) subprogram_parameters ;
+#19 subprogram_head -> procedure ID(print) subprogram_parameters ;
 #10 declarations -> EMPTY
 Token: Code=281  Line= 18  Col= 8    Name= BEGIN        Spelling= 'begin'
 Token: Code=300  Line= 19  Col= 10   Name= ID           Spelling= 'write'
@@ -104,7 +104,7 @@ Token: Code=274  Line= 19  Col= 29   Name= RPAREN       Spelling= ')'
 #48 simple_expression -> term
 #40 expression -> simple_expression
 #38 expression_list -> expression
-#37 ID(begin) ( expression_list )
+#37 ID(write) ( expression_list )
 #30 statement -> procedure_statement
 #27 statement_list -> statement
 Token: Code=265  Line= 19  Col= 30   Name= SEMICOLON    Spelling= ';'
@@ -112,12 +112,12 @@ Token: Code=300  Line= 20  Col= 10   Name= ID           Spelling= 'write'
 Token: Code=273  Line= 20  Col= 11   Name= LPAREN       Spelling= '('
 Token: Code=300  Line= 20  Col= 12   Name= ID           Spelling= 'a'
 Token: Code=274  Line= 20  Col= 13   Name= RPAREN       Spelling= ')'
-#63 factor -> ID(()
+#63 factor -> ID(a)
 #56 term -> factor
 #48 simple_expression -> term
 #40 expression -> simple_expression
 #38 expression_list -> expression
-#37 ID(;) ( expression_list )
+#37 ID(write) ( expression_list )
 #30 statement -> procedure_statement
 #28 statement_list -> statement_list SEMICOLON statement
 Token: Code=265  Line= 20  Col= 14   Name= SEMICOLON    Spelling= ';'
@@ -130,7 +130,7 @@ Token: Code=274  Line= 21  Col= 19   Name= RPAREN       Spelling= ')'
 #48 simple_expression -> term
 #40 expression -> simple_expression
 #38 expression_list -> expression
-#37 ID(;) ( expression_list )
+#37 ID(write) ( expression_list )
 #30 statement -> procedure_statement
 #28 statement_list -> statement_list SEMICOLON statement
 Token: Code=265  Line= 21  Col= 20   Name= SEMICOLON    Spelling= ';'
@@ -138,12 +138,12 @@ Token: Code=300  Line= 22  Col= 10   Name= ID           Spelling= 'write'
 Token: Code=273  Line= 22  Col= 11   Name= LPAREN       Spelling= '('
 Token: Code=300  Line= 22  Col= 12   Name= ID           Spelling= 'b'
 Token: Code=274  Line= 22  Col= 13   Name= RPAREN       Spelling= ')'
-#63 factor -> ID(()
+#63 factor -> ID(b)
 #56 term -> factor
 #48 simple_expression -> term
 #40 expression -> simple_expression
 #38 expression_list -> expression
-#37 ID(;) ( expression_list )
+#37 ID(write) ( expression_list )
 #30 statement -> procedure_statement
 #28 statement_list -> statement_list SEMICOLON statement
 Token: Code=265  Line= 22  Col= 14   Name= SEMICOLON    Spelling= ';'
@@ -156,7 +156,7 @@ Token: Code=274  Line= 23  Col= 18   Name= RPAREN       Spelling= ')'
 #48 simple_expression -> term
 #40 expression -> simple_expression
 #38 expression_list -> expression
-#37 ID(;) ( expression_list )
+#37 ID(write) ( expression_list )
 #30 statement -> procedure_statement
 #28 statement_list -> statement_list SEMICOLON statement
 Token: Code=265  Line= 23  Col= 19   Name= SEMICOLON    Spelling= ';'
@@ -166,31 +166,31 @@ Token: Code=300  Line= 24  Col= 14   Name= ID           Spelling= 'max'
 Token: Code=273  Line= 24  Col= 15   Name= LPAREN       Spelling= '('
 Token: Code=300  Line= 24  Col= 16   Name= ID           Spelling= 'a'
 Token: Code=264  Line= 24  Col= 17   Name= COMMA        Spelling= ','
-#63 factor -> ID(()
+#63 factor -> ID(a)
 #56 term -> factor
 #48 simple_expression -> term
 #40 expression -> simple_expression
 #38 expression_list -> expression
 Token: Code=300  Line= 24  Col= 18   Name= ID           Spelling= 'b'
 Token: Code=274  Line= 24  Col= 19   Name= RPAREN       Spelling= ')'
-#63 factor -> ID(,)
+#63 factor -> ID(b)
 #56 term -> factor
 #48 simple_expression -> term
 #40 expression -> simple_expression
 #39 expression_list -> expression_list , expression
-#65 factor -> ID(() LPAREN expression_list RPAREN
+#65 factor -> ID(max) LPAREN expression_list RPAREN
 #56 term -> factor
 Token: Code=274  Line= 24  Col= 20   Name= RPAREN       Spelling= ')'
 #48 simple_expression -> term
 #40 expression -> simple_expression
 #38 expression_list -> expression
-#37 ID(;) ( expression_list )
+#37 ID(write) ( expression_list )
 #30 statement -> procedure_statement
 #28 statement_list -> statement_list SEMICOLON statement
 Token: Code=265  Line= 24  Col= 21   Name= SEMICOLON    Spelling= ';'
 Token: Code=300  Line= 25  Col= 12   Name= ID           Spelling= 'writeln'
 Token: Code=285  Line= 26  Col= 6    Name= END          Spelling= 'end'
-#36 procedure_statement -> ID(;)
+#36 procedure_statement -> ID(writeln)
 #30 statement -> procedure_statement
 #28 statement_list -> statement_list SEMICOLON statement
 #26 optional_statements -> statement_list
@@ -216,7 +216,7 @@ Token: Code=274  Line= 28  Col= 13   Name= RPAREN       Spelling= ')'
 #48 simple_expression -> term
 #40 expression -> simple_expression
 #39 expression_list -> expression_list , expression
-#37 ID(begin) ( expression_list )
+#37 ID(print) ( expression_list )
 #30 statement -> procedure_statement
 #27 statement_list -> statement
 Token: Code=285  Line= 29  Col= 4    Name= END          Spelling= 'end'

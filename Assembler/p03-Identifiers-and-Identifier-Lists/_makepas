@@ -4,4 +4,5 @@ rm paslex.cpp
 rm pastkn.h
 rm y.output
 rm pas
+rm y.tab.h
 make -f _makepascal

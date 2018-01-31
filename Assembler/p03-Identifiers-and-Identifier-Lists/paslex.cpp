@@ -1998,6 +1998,7 @@ int tokenManager(int T)
 		}
 		else
 		{
+			yylval.token = new string(yytext);
 			printToken(fout, T, line, col);
 			return T;
 		}

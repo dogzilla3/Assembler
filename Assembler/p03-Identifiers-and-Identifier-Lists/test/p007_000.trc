@@ -6,15 +6,15 @@ Token: Code=293  Line= 12  Col= 8    Name= PROGRAM      Spelling= 'program'
 Token: Code=300  Line= 12  Col= 17   Name= ID           Spelling= 'p007_000'
 Token: Code=273  Line= 12  Col= 18   Name= LPAREN       Spelling= '('
 Token: Code=300  Line= 12  Col= 23   Name= ID           Spelling= 'input'
-#08 identifier_list -> ID(() identifier_list = {(
+#08 identifier_list -> ID(input) identifier_list ={input}
 Token: Code=264  Line= 12  Col= 24   Name= COMMA        Spelling= ','
 Token: Code=300  Line= 12  Col= 30   Name= ID           Spelling= 'output'
-#09 identifier_list -> identifier_list , ID(,) identifier_list = {(, ,
+#09 identifier_list -> identifier_list , ID(output) identifier_list ={input, output}
 Token: Code=274  Line= 12  Col= 31   Name= RPAREN       Spelling= ')'
 #07 program_parameter_list -> identifier_list
 #06 program_parameters -> ( program_parameters )
 Token: Code=265  Line= 12  Col= 32   Name= SEMICOLON    Spelling= ';'
-#02 program_head -> program ID(program) program_parameters SEMICOLON
+#02 program_head -> program ID(p007_000) program_parameters SEMICOLON
 #10 declarations -> EMPTY
 Token: Code=281  Line= 13  Col= 6    Name= BEGIN        Spelling= 'begin'
 #15 subprogram_declarations -> EMPTY

@@ -6,11 +6,11 @@ Token: Code=293  Line= 12  Col= 8    Name= PROGRAM      Spelling= 'program'
 Token: Code=300  Line= 12  Col= 17   Name= ID           Spelling= 'p013_000'
 Token: Code=265  Line= 12  Col= 18   Name= SEMICOLON    Spelling= ';'
 #05 program_parameters -> EMPTY
-#02 program_head -> program ID(program) program_parameters SEMICOLON
+#02 program_head -> program ID(p013_000) program_parameters SEMICOLON
 #10 declarations -> EMPTY
 Token: Code=297  Line= 13  Col= 6    Name= VAR          Spelling= 'var'
 Token: Code=300  Line= 13  Col= 8    Name= ID           Spelling= 'a'
-#08 identifier_list -> ID(var) identifier_list = {var
+#08 identifier_list -> ID(a) identifier_list ={a}
 Token: Code=266  Line= 13  Col= 9    Name= COLON        Spelling= ':'
 Token: Code=280  Line= 13  Col= 14   Name= ARRAY        Spelling= 'array'
 Token: Code=275  Line= 13  Col= 15   Name= LBRACKET     Spelling= '['
@@ -20,10 +20,10 @@ Token: Code=301  Line= 13  Col= 20   Name= INTLIT       Spelling= '10'
 Token: Code=276  Line= 13  Col= 21   Name= RBRACKET     Spelling= ']'
 Token: Code=290  Line= 13  Col= 24   Name= OF           Spelling= 'of'
 Token: Code=300  Line= 13  Col= 32   Name= ID           Spelling= 'integer'
-#14 standard_type -> ID(of)
+#14 standard_type -> ID(integer)
 #13 type -> array [ intlit .. intlit ] of standard_type
 Token: Code=265  Line= 13  Col= 33   Name= SEMICOLON    Spelling= ';'
-#11 declarations -> declarations VAR identifier_list : type SEMICOLON
+#11 declarations -> declarations VAR identifier_list {a} : type SEMICOLON
 Token: Code=281  Line= 14  Col= 6    Name= BEGIN        Spelling= 'begin'
 #15 subprogram_declarations -> EMPTY
 #03 program_declarations -> declarations subprogram_declarations

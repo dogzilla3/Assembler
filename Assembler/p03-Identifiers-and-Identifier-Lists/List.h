@@ -50,6 +50,26 @@ public:
 		curCount++;
 	}	
 
+	string printList()
+	{
+	 string list = "{";
+	
+	    for (int i = 0; i < curCount; i++)
+	    {
+	      if (i > 0)
+	      {
+	        list += ", ";
+	        list += l[i];
+	      }
+	      else
+		{
+		list += l[i];
+		}
+	    }
+	    list += "}";
+	    return list;
+	}
+
 	void printList(const char* begin, ostream& o)
 	{
 		o << begin << "{";
@@ -58,8 +78,9 @@ public:
 			if (i > 0) o << ", ";
 			o << l[i]; 
 		}
-		o << " }";	
+		o << "}";
 	}
+
 
 	T operator[](int x)
 	{

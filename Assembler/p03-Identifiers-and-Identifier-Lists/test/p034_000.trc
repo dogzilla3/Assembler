@@ -6,23 +6,23 @@ Token: Code=293  Line= 12  Col= 8    Name= PROGRAM      Spelling= 'program'
 Token: Code=300  Line= 12  Col= 17   Name= ID           Spelling= 'p034_000'
 Token: Code=265  Line= 12  Col= 18   Name= SEMICOLON    Spelling= ';'
 #05 program_parameters -> EMPTY
-#02 program_head -> program ID(program) program_parameters SEMICOLON
+#02 program_head -> program ID(p034_000) program_parameters SEMICOLON
 #10 declarations -> EMPTY
 Token: Code=297  Line= 13  Col= 6    Name= VAR          Spelling= 'var'
 Token: Code=300  Line= 13  Col= 12   Name= ID           Spelling= 'count'
-#08 identifier_list -> ID(var) identifier_list = {var
+#08 identifier_list -> ID(count) identifier_list ={count}
 Token: Code=266  Line= 13  Col= 13   Name= COLON        Spelling= ':'
 Token: Code=300  Line= 13  Col= 20   Name= ID           Spelling= 'integer'
-#14 standard_type -> ID(:)
+#14 standard_type -> ID(integer)
 #12 type -> standard_type
 Token: Code=265  Line= 13  Col= 21   Name= SEMICOLON    Spelling= ';'
-#11 declarations -> declarations VAR identifier_list : type SEMICOLON
+#11 declarations -> declarations VAR identifier_list {count} : type SEMICOLON
 Token: Code=281  Line= 14  Col= 6    Name= BEGIN        Spelling= 'begin'
 #15 subprogram_declarations -> EMPTY
 #03 program_declarations -> declarations subprogram_declarations
 Token: Code=300  Line= 15  Col= 8    Name= ID           Spelling= 'count'
 Token: Code=262  Line= 15  Col= 10   Name= ASSIGN       Spelling= ':='
-#34 variable -> ID(begin)
+#34 variable -> ID(count)
 Token: Code=301  Line= 15  Col= 12   Name= INTLIT       Spelling= '10'
 #68 factor -> INTLIT(10)
 #56 term -> factor
@@ -34,7 +34,7 @@ Token: Code=265  Line= 15  Col= 13   Name= SEMICOLON    Spelling= ';'
 Token: Code=298  Line= 16  Col= 8    Name= WHILE        Spelling= 'while'
 Token: Code=300  Line= 16  Col= 14   Name= ID           Spelling= 'count'
 Token: Code=272  Line= 16  Col= 16   Name= GEQ          Spelling= '>='
-#63 factor -> ID(while)
+#63 factor -> ID(count)
 #56 term -> factor
 #48 simple_expression -> term
 #47 relop -> >=
@@ -49,7 +49,7 @@ Token: Code=300  Line= 18  Col= 10   Name= ID           Spelling= 'write'
 Token: Code=273  Line= 18  Col= 11   Name= LPAREN       Spelling= '('
 Token: Code=300  Line= 18  Col= 16   Name= ID           Spelling= 'count'
 Token: Code=264  Line= 18  Col= 17   Name= COMMA        Spelling= ','
-#63 factor -> ID(()
+#63 factor -> ID(count)
 #56 term -> factor
 #48 simple_expression -> term
 #40 expression -> simple_expression
@@ -61,16 +61,16 @@ Token: Code=274  Line= 18  Col= 22   Name= RPAREN       Spelling= ')'
 #48 simple_expression -> term
 #40 expression -> simple_expression
 #39 expression_list -> expression_list , expression
-#37 ID(begin) ( expression_list )
+#37 ID(write) ( expression_list )
 #30 statement -> procedure_statement
 #27 statement_list -> statement
 Token: Code=265  Line= 18  Col= 23   Name= SEMICOLON    Spelling= ';'
 Token: Code=300  Line= 19  Col= 10   Name= ID           Spelling= 'count'
 Token: Code=262  Line= 19  Col= 12   Name= ASSIGN       Spelling= ':='
-#34 variable -> ID(;)
+#34 variable -> ID(count)
 Token: Code=300  Line= 19  Col= 17   Name= ID           Spelling= 'count'
 Token: Code=259  Line= 19  Col= 18   Name= MINUS        Spelling= '-'
-#63 factor -> ID(:=)
+#63 factor -> ID(count)
 #56 term -> factor
 #48 simple_expression -> term
 #54 addop -> -
@@ -97,7 +97,7 @@ Token: Code=274  Line= 21  Col= 24   Name= RPAREN       Spelling= ')'
 #48 simple_expression -> term
 #40 expression -> simple_expression
 #38 expression_list -> expression
-#37 ID(;) ( expression_list )
+#37 ID(writeln) ( expression_list )
 #30 statement -> procedure_statement
 #28 statement_list -> statement_list SEMICOLON statement
 Token: Code=285  Line= 22  Col= 4    Name= END          Spelling= 'end'
