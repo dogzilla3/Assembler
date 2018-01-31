@@ -6,8 +6,11 @@
 #include <iostream>
 #include <string>
 #include <map>
-#include "pastkn.h"
+
 using namespace std;
+
+#include "pastkn.h"
+
 
 /*
 * -------------------------------------------------------------------------
@@ -35,5 +38,7 @@ class Scan
   char* fetchSpelling (void);     //Return the spelling of the most recent token
   int fetchLine (void);
   int fetchCol (void);
+  void printToken(std::ostream& o, int, int, int);
+
 };
 #endif

@@ -19,7 +19,8 @@
 #-------------------------------------------------------------------------------
 
 #----------------------------------------------------------------------
-obj	=	paspar.o	\
+obj	=	identifier_list.o	\
+		paspar.o	\
 		paslex.o	\
 		pas.o
 #----------------------------------------------------------------------
@@ -46,9 +47,11 @@ pastkn.h	\
 paspar.cpp:	paspar.y
 			yacc -d -v paspar.y
 			mv y.tab.c paspar.cpp
-			mv y.tab.h pastkn.h
+			cat pastkn_p.h y.tab.h pastkn_e.h > pastkn.h
 #----------------------------------------------------------------------
 paspar.o:	paspar.cpp paspar.h
 			g++ -c -g paspar.cpp
 #----------------------------------------------------------------------
-		
+identifier_list.o:	identifier_list.cpp identifier_list.h
+			g++ -c -g identifier_list.cpp
+#----------------------------------------------------------------------		

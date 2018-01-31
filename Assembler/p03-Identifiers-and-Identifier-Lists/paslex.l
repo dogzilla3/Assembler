@@ -16,11 +16,7 @@
  * -------------------------------------------------------------------------
  */
 
-/*
- * -------------------------------------------------------------------------
- * Definition Section
- * -------------------------------------------------------------------------
- */
+
 
 %{
 #include <string>
@@ -42,10 +38,13 @@ struct comparer
     }
 };
 
+void printToken(ostream&, int, int, int);
+
 int tokenManager(int token);
 void badTokenException();
 int col = 1;
 int line = 1;
+extern ofstream fout;
 map<string, int, comparer> reserveWords;
 %}
 
@@ -100,6 +99,7 @@ int tokenManager(int T)
 	col+=strlen(yytext);
 	if(T == ID)
 	{
+		
 		string lower(yytext);
 
 		for (int i=0; lower[i]; i++) 
@@ -109,15 +109,21 @@ int tokenManager(int T)
 		map<string, int>::iterator it = reserveWords.find(lower);
 		if(it != reserveWords.end())
 		{
-			return reserveWords.find(lower)->second;
+			int t = reserveWords.find(lower)->second;
+			yylval.token = new string(yytext);
+			printToken(fout, t, line, col);
+			return t;
 		}
 		else
 		{
+			printToken(fout, T, line, col);
 			return T;
 		}
 	}
 	else
 	{
+		printToken(fout, T, line, col);
+		yylval.token = new string(yytext);
 		return T;
 	}	
 }
@@ -179,4 +185,60 @@ int Scan::fetchLine()
 int Scan::fetchCol()
 {
 	return col;
+}
+
+void printToken(ostream& o, int t, int l, int c)
+{
+ 
+  o << endl << left << "Token: Code=" << setw (4) << t << " Line= " << setw (3) << l << " Col= " << setw (4) << c << " Name= " << setw (12);
+  
+  switch (t)
+  {
+    case PLUS:      o << "PLUS"; break;
+    case MINUS:     o << "MINUS"; break;
+    case STAR:      o << "STAR"; break;
+    case SLASH:     o << "SLASH"; break;
+    case ASSIGN:    o << "ASSIGN"; break;
+    case PERIOD:    o << "PERIOD"; break;
+    case COMMA:     o << "COMMA"; break;
+    case SEMICOLON: o << "SEMICOLON"; break;
+    case COLON:     o << "COLON"; break;
+    case EQU:       o << "EQU"; break;
+    case NEQ:       o << "NEQ"; break;
+    case LES:       o << "LES"; break;
+    case LEQ:       o << "LEQ"; break;
+    case GRT:       o << "GRT"; break;
+    case GEQ:       o << "GEQ"; break;
+    case LPAREN:    o << "LPAREN"; break;
+    case RPAREN:    o << "RPAREN"; break;
+    case LBRACKET:  o << "LBRACKET"; break;
+    case RBRACKET:  o << "RBRACKET"; break;
+    case RANGE:     o << "RANGE"; break;
+    case ID:        o << "ID"; break;
+    case INTLIT:    o << "INTLIT"; break;
+    case REALIT:    o << "REALIT"; break;
+    case CHRLIT:    o << "CHRLIT"; break;
+    case COMMENT:   o << "COMMENT"; break;
+    case AND:       o << "AND"; break;
+    case ARRAY:     o << "ARRAY"; break;
+    case DIV:       o << "DIV"; break;
+    case DO:        o << "DO"; break;
+    case ELSE:      o << "ELSE"; break; 
+    case END:       o << "END"; break;
+    case FUNCTION:  o << "FUNCTION"; break;
+    case IF:        o << "IF"; break;
+    case MOD:       o << "MOD"; break;
+    case NOT:       o << "NOT"; break;
+    case OF:        o << "OF"; break;
+    case OR:        o << "OR"; break;
+    case PROCEDURE: o << "PROCEDURE"; break;
+    case PROGRAM:   o << "PROGRAM"; break;
+    case THEN:      o << "THEN"; break;
+    case TO:        o << "TO"; break;
+    case TYPE:      o << "TYPE"; break;
+    case VAR:       o << "VAR"; break;
+    case WHILE:     o << "WHILE"; break;
+    case BEGIN_:    o << "BEGIN"; break;
+  }
+  o << " Spelling= '" << ((char*)yytext) << "'";
 }

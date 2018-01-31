@@ -142,6 +142,8 @@ echo   p069_000.pas
 pas ./test/p069_000.pas
 echo   p070_000.pas
 pas ./test/p070_000.pas
+echo   TestFromLecture.pas
+pas ./test/TestFromLecture.pas
 
 printf "\n\n**End of Tests**\n"
 printf "\n"

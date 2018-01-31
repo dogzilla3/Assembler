@@ -65,62 +65,6 @@ void FileException (char* fn)
   exit (EXIT_FAILURE);
 }
 
-void printToken (int t, ostream& o, Scan L)
-{
-  //if (t != 0) o << endl << "Token: Code=" << setw (3) << t << " Name=" << setw (10);
- 
-  if (t != 0) o << left << "Token: Code=" << setw (4) << t << " Line= " << setw (3) << L.fetchLine () << " Col= " << setw (4) << L.fetchCol () << " Name= " << setw (12);
-  switch (t)
-  {
-    case PLUS:      o << "PLUS"; break;
-    case MINUS:     o << "MINUS"; break;
-    case STAR:      o << "STAR"; break;
-    case SLASH:     o << "SLASH"; break;
-    case ASSIGN:    o << "ASSIGN"; break;
-    case PERIOD:    o << "PERIOD"; break;
-    case COMMA:     o << "COMMA"; break;
-    case SEMICOLON: o << "SEMICOLON"; break;
-    case COLON:     o << "COLON"; break;
-    case EQU:       o << "EQU"; break;
-    case NEQ:       o << "NEQ"; break;
-    case LES:       o << "LES"; break;
-    case LEQ:       o << "LEQ"; break;
-    case GRT:       o << "GRT"; break;
-    case GEQ:       o << "GEQ"; break;
-    case LPAREN:    o << "LPAREN"; break;
-    case RPAREN:    o << "RPAREN"; break;
-    case LBRACKET:  o << "LBRACKET"; break;
-    case RBRACKET:  o << "RBRACKET"; break;
-    case RANGE:     o << "RANGE"; break;
-    case ID:        o << "ID"; break;
-    case INTLIT:    o << "INTLIT"; break;
-    case REALIT:    o << "REALIT"; break;
-    case CHRLIT:    o << "CHRLIT"; break;
-    case COMMENT:   o << "COMMENT"; break;
-    case AND:       o << "AND"; break;
-    case ARRAY:     o << "ARRAY"; break;
-    case DIV:       o << "DIV"; break;
-    case DO:        o << "DO"; break;
-    case ELSE:      o << "ELSE"; break; 
-    case END:       o << "END"; break;
-    case FUNCTION:  o << "FUNCTION"; break;
-    case IF:        o << "IF"; break;
-    case MOD:       o << "MOD"; break;
-    case NOT:       o << "NOT"; break;
-    case OF:        o << "OF"; break;
-    case OR:        o << "OR"; break;
-    case PROCEDURE: o << "PROCEDURE"; break;
-    case PROGRAM:   o << "PROGRAM"; break;
-    case THEN:      o << "THEN"; break;
-    case TO:        o << "TO"; break;
-    case TYPE:      o << "TYPE"; break;
-    case VAR:       o << "VAR"; break;
-    case WHILE:     o << "WHILE"; break;
-    case BEGIN_:    o << "BEGIN"; break;
-  }
-  o << " Spelling= '" << L.fetchSpelling () << "'" << endl;
-}
-
 void ScanMgr (FILE* i, ostream& o)
 {
   o  << "       **Start of Scan**" << endl << endl;
@@ -130,7 +74,7 @@ void ScanMgr (FILE* i, ostream& o)
     int t = L.Lex ();
     if (t == 0) break;
     
-    printToken (t, o, L);
+   // printToken (t, o, L);
   }
   o << endl << "       **End of Scan**" << endl << endl;
   cout << "End of scan" << endl;
@@ -185,7 +129,7 @@ int main (int argc, char* argv[])
 
   cout << "Input file: " << ifn << "  |  Trace File: " << ofn << endl;
 
-  ScanMgr (inFile, fout);
+  //ScanMgr (inFile, fout);
   fclose (inFile);
 
   inFile = fopen (ifn, "r"); if (!inFile) FileException (ifn);

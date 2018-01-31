@@ -30,6 +30,8 @@
 
 #include "paslex.h"
 #include "paspar.h"
+#include "List.h"
+#include "identifier_list.h"
 
 extern ofstream fout;
 extern int line;
@@ -39,7 +41,11 @@ using namespace std;
 
 void yyerror(const char* m);
 %}
-%union { std::string* token; }
+%union
+{ std::string* token;
+  SList<string>* strList;
+}
+%type  <strList> identifier_list
 %token <token> PLUS
 %token <token> MINUS
 %token <token> STAR
@@ -94,7 +100,7 @@ program:
 	}
 program_head:
 	PROGRAM ID program_parameters SEMICOLON 
-	{fout << endl << "#02 program_head -> program id program_parameters SEMICOLON";
+	{fout << endl << "#02 program_head -> program ID(" << (*$2) << ") program_parameters SEMICOLON";
 	}
 program_declarations:
 	declarations subprogram_declarations
@@ -117,11 +123,13 @@ program_parameter_list:
 	}
 identifier_list:
 	ID	
-	{fout << endl << "#08 identifier_list -> ID";
+	{fout << endl << "#08 identifier_list -> ID(" << (*$1) << ")";
+	$$=id_list($1);
 	}
 identifier_list:
 	identifier_list COMMA ID
-	{fout << endl << "#09 identifier_list -> identifier_list , ID";
+	{fout << endl << "#09 identifier_list -> identifier_list , ID(" << (*$3) << ")";
+	$$=id_list($1, $3);
 	}
 declarations:
 	{fout << endl << "#10 declarations -> EMPTY";
@@ -140,7 +148,7 @@ type:
 	}
 standard_type:
 	ID
-	{fout << endl << "#14 standard_type -> ID";
+	{fout << endl << "#14 standard_type -> ID(" << (*$1) << ")";
 	}
 subprogram_declarations:
 	{fout << endl << "#15 subprogram_declarations -> EMPTY";
@@ -155,11 +163,11 @@ subprogram_declaration:
 	}
 subprogram_head:
 	FUNCTION ID subprogram_parameters COLON standard_type SEMICOLON
-	{fout << endl << "#18 subprogram_head -> function id subprogram_parameters : standard_type ;";
+	{fout << endl << "#18 subprogram_head -> function ID(" << (*$2) << ") subprogram_parameters : standard_type ;";
 	}
 subprogram_head:
 	PROCEDURE ID subprogram_parameters SEMICOLON
-	{fout << endl << "#19 subprogram_head -> procedure ID subprogram_parameters ;";
+	{fout << endl << "#19 subprogram_head -> procedure ID(" << (*$2) << ") subprogram_parameters ;";
 	}
 subprogram_parameters:
 	{fout << endl << "#20 subprogram_parameters -> EMPTY";
@@ -217,19 +225,19 @@ statement:
 	}
 variable:
 	ID
-	{fout << endl << "#34 variable -> ID";
+	{fout << endl << "#34 variable -> ID(" << (*$1) << ")";
 	}
 variable:
 	ID LBRACKET expression RBRACKET
-	{fout << endl << "#35 variable -> id LPAREN expression RPAREN";
+	{fout << endl << "#35 variable -> ID(" << (*$1) << ") LPAREN expression RPAREN";
 	}
 procedure_statement:
 	ID
-	{fout << endl << "#36 procedure_statement -> ID";
+	{fout << endl << "#36 procedure_statement -> ID(" << (*$1) << ")";
 	}
 procedure_statement:
 	ID LPAREN expression_list RPAREN
-	{fout << endl << "#37 ID ( expression_list )";
+	{fout << endl << "#37 ID(" << (*$1) << ") ( expression_list )";
 	}
 expression_list:
 	expression
@@ -333,15 +341,15 @@ mulop:
 	}
 factor:
 	ID
-	{fout << endl << "#63 factor -> ID";
+	{fout << endl << "#63 factor -> ID(" << (*$1) << ")";
 	}
 factor:
 	ID LBRACKET expression RBRACKET
-	{fout << endl << "#64 factor -> ID RBRACKET expression RBRACKET";
+	{fout << endl << "#64 factor -> ID(" << (*$1) << ") RBRACKET expression RBRACKET";
 	}
 factor:
 	ID LPAREN expression_list RPAREN
-	{fout << endl << "#65 factor -> id LPAREN expression_list RPAREN";
+	{fout << endl << "#65 factor -> ID(" << (*$1) << ") LPAREN expression_list RPAREN";
 	}
 factor:
 	LPAREN expression RPAREN
@@ -353,15 +361,15 @@ factor:
 	}
 factor:
 	INTLIT
-	{fout << endl << "#68 factor -> INTLIT";
+	{fout << endl << "#68 factor -> INTLIT(" << (*$1) << ")";
 	}
 factor:
 	REALIT
-	{fout << endl << "#69 factor -> REALIT";
+	{fout << endl << "#69 factor -> REALIT(" << (*$1) << ")";
 	}
 factor:
 	CHRLIT
-	{fout << endl << "#70 factor -> CHRLIT";
+	{fout << endl << "#70 factor -> CHRLIT(" << (*$1) << ")";
 	}
 %%
 void yyerror(const char* m)
