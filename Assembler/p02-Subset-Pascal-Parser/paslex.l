@@ -3,11 +3,12 @@
  * Author: Gregory Levy
  * Student ID: *20444120
  * E-Mail: glevy@uco.edu
- * Course: CMSC 4173 – Translator Design
+ * Course: CMSC 4173 â€“ Translator Design
  * CRN: 21175, Spring, 2017
  * Project: p02 - Subset Pascal Parser
  * Due: January 24, 2018
  * Account: tt072
+ * Edit for a pull
  * -------------------------------------------------------------------------
  *
  *
