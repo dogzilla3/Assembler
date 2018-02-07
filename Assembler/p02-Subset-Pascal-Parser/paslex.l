@@ -5,8 +5,8 @@
  * E-Mail: glevy@uco.edu
  * Course: CMSC 4173 – Translator Design
  * CRN: 21175, Spring, 2017
- * Project: p01 - Subset Pascal Scanner
- * Due: January 17, 2018
+ * Project: p02 - Subset Pascal Parser
+ * Due: January 24, 2018
  * Account: tt072
  * Edit for a pull
  * -------------------------------------------------------------------------
@@ -30,7 +30,6 @@
 #include <fstream>
 #include <map>
 #include <iomanip>
-#include <string>
 #include "paslex.h"
 
 using namespace std;
@@ -45,29 +44,28 @@ struct comparer
 };
 
 int tokenManager(int token);
-void badTokenException(string, char*);
 void badTokenException();
-static int col = 1;
-static int line = 1;
+int col = 1;
+int line = 1;
 map<string, int, comparer> reserveWords;
 %}
 
 %%
-[{][^}]*[}]									{ for (int a=0;a<strlen(yytext);a++) {
-											col++;
-											if (yytext[a]=='\n') {
-                                               col=1;
-                                               line++;
+[{][^{]*[}]									{	for (int a=0;a<strlen(yytext);a++) {
+													col++;
+													if (yytext[a]=='\n') {
+														col=1;
+														line++;
 													}
 												}
 											}
 [ \t]+										{col+=strlen(yytext);}
-[\n]										{line++; col=1;}
+[\n]										{line++; col=1;}	
 [_a-zA-Z][_a-zA-Z0-9]*						{return(tokenManager(ID));}
-[']([^']|(\'\'))*[']						{return(tokenManager(CHRLIT));} 
+[']([^']|(\'\'))([^']|(\'\'))+[']			{return(tokenManager(CHRLIT));} 
 [0-9]+										{return(tokenManager(INTLIT));}
-[0-9]+[Ee][+|-]?[0-9]+						{return(tokenManager(REALIT));}
-[0-9]+\.[0-9]+([Ee][+|-]?[0-9]+)?			{return(tokenManager(REALIT));}
+[0-9]+([eE][0-9]+)?							{return(tokenManager(REALIT));}
+[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?			{return(tokenManager(REALIT));}
 "+"											{return(tokenManager(PLUS));}
 "-"											{return(tokenManager(MINUS));}
 "*"											{return(tokenManager(STAR));}
@@ -88,18 +86,8 @@ map<string, int, comparer> reserveWords;
 "["											{return(tokenManager(LBRACKET));}
 "]"											{return(tokenManager(RBRACKET));}
 ".."										{return(tokenManager(RANGE));}
-[0-9]+\.[^0-9]+([Ee][+|-]?[0-9]+)?			{badTokenException("Invalid Integer Literal", yytext);}
-\.[0-9]+([Ee][+|-]?[0-9]+)?					{badTokenException("Invalid Integer Literal", yytext);}
 .											{badTokenException();}
 %%
-
-void badTokenException(string str1, char* str2)
-{
-	cout << "ERROR! Unrecognized token at: Line " << line << " Column " << col << endl;
-	cout << str1 << " -> " << str2; 
-	cout << "Program terminated" << endl;
-	exit (EXIT_FAILURE);
-}
 
 void badTokenException()
 {
@@ -138,29 +126,33 @@ int tokenManager(int T)
 Scan::Scan(FILE* i)
 { 
   yyin=i;
-  reserveWords.insert (pair <string, int> ("and", 326));
-  reserveWords.insert (pair <string, int> ("array", 327));
-  reserveWords.insert (pair <string, int> ("div", 328));
-  reserveWords.insert (pair <string, int> ("do", 329));
-  reserveWords.insert (pair <string, int> ("else", 330));
-  reserveWords.insert (pair <string, int> ("end", 331));
-  reserveWords.insert (pair <string, int> ("function", 332));
-  reserveWords.insert (pair <string, int> ("if", 333));
-  reserveWords.insert (pair <string, int> ("mod", 334));
-  reserveWords.insert (pair <string, int> ("not", 335));
-  reserveWords.insert (pair <string, int> ("of", 336));
-  reserveWords.insert (pair <string, int> ("or", 337));
-  reserveWords.insert (pair <string, int> ("procedure", 338));
-  reserveWords.insert (pair <string, int> ("program", 339));
-  reserveWords.insert (pair <string, int> ("then", 340));
-  reserveWords.insert (pair <string, int> ("to", 341));
-  reserveWords.insert (pair <string, int> ("type", 342));
-  reserveWords.insert (pair <string, int> ("var", 343));
-  reserveWords.insert (pair <string, int> ("while", 344));
-};
-
-
-int Scan::Lex(void)
+  reserveWords.insert (pair <string, int> ("and",	279));
+  reserveWords.insert (pair <string, int> ("array", 280));
+  reserveWords.insert (pair <string, int> ("begin", 281));
+  reserveWords.insert (pair <string, int> ("div", 282));
+  reserveWords.insert (pair <string, int> ("do", 283));
+  reserveWords.insert (pair <string, int> ("else", 284));
+  reserveWords.insert (pair <string, int> ("end", 285));
+  reserveWords.insert (pair <string, int> ("function", 286));
+  reserveWords.insert (pair <string, int> ("if", 287));
+  reserveWords.insert (pair <string, int> ("mod", 288));
+  reserveWords.insert (pair <string, int> ("not", 289));
+  reserveWords.insert (pair <string, int> ("of", 290));
+  reserveWords.insert (pair <string, int> ("or", 291));
+  reserveWords.insert (pair <string, int> ("procedure", 292));
+  reserveWords.insert (pair <string, int> ("program", 293));
+  reserveWords.insert (pair <string, int> ("then", 294));
+  reserveWords.insert (pair <string, int> ("to", 295));
+  reserveWords.insert (pair <string, int> ("type", 296));
+  reserveWords.insert (pair <string, int> ("var", 297));
+  reserveWords.insert (pair <string, int> ("while", 298));
+  reserveWords.insert (pair <string, int> ("id", 300));
+  reserveWords.insert (pair <string, int> ("intlit", 301));
+  reserveWords.insert (pair <string, int> ("realit", 302));
+  reserveWords.insert (pair <string, int> ("chrlit", 303));
+  reserveWords.insert (pair <string, int> ("comment", 304));
+}
+int Scan::Lex(void)						   
 { 
 	return tcode=yylex();
 }
