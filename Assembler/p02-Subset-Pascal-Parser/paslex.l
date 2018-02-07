@@ -8,7 +8,6 @@
  * Project: p02 - Subset Pascal Parser
  * Due: January 24, 2018
  * Account: tt072
- * Edit for a pull
  * -------------------------------------------------------------------------
  *
  *
@@ -30,6 +29,7 @@
 #include <fstream>
 #include <map>
 #include <iomanip>
+#include <string>
 #include "paslex.h"
 
 using namespace std;
@@ -44,9 +44,10 @@ struct comparer
 };
 
 int tokenManager(int token);
+void badTokenException(string, char*);
 void badTokenException();
-int col = 1;
-int line = 1;
+static int col = 1;
+static int line = 1;
 map<string, int, comparer> reserveWords;
 %}
 
@@ -65,7 +66,7 @@ map<string, int, comparer> reserveWords;
 [']([^']|(\'\'))([^']|(\'\'))+[']			{return(tokenManager(CHRLIT));} 
 [0-9]+										{return(tokenManager(INTLIT));}
 [0-9]+([eE][0-9]+)?							{return(tokenManager(REALIT));}
-[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?			{return(tokenManager(REALIT));}
+[0-9]+\.?[0-9]+([eE][-+]?[0-9]+)?			{return(tokenManager(REALIT));}
 "+"											{return(tokenManager(PLUS));}
 "-"											{return(tokenManager(MINUS));}
 "*"											{return(tokenManager(STAR));}
@@ -86,8 +87,18 @@ map<string, int, comparer> reserveWords;
 "["											{return(tokenManager(LBRACKET));}
 "]"											{return(tokenManager(RBRACKET));}
 ".."										{return(tokenManager(RANGE));}
+[0-9]+\.[^0-9]+([Ee][+|-]?[0-9]+)?			{badTokenException("Invalid Integer Literal", yytext);}
+\.[0-9]+([Ee][+|-]?[0-9]+)?					{badTokenException("Invalid Integer Literal", yytext);}
 .											{badTokenException();}
 %%
+
+void badTokenException(string str1, char* str2)
+{
+	cout << "ERROR! Unrecognized token at: Line " << line << " Column " << col << endl;
+	cout << str1 << " -> " << str2; 
+	cout << "Program terminated" << endl;
+	exit (EXIT_FAILURE);
+}
 
 void badTokenException()
 {
