@@ -44,6 +44,7 @@ struct comparer
 };
 
 int tokenManager(int token);
+void badTokenException(string, char*);
 void badTokenException();
 static int col = 1;
 static int line = 1;
@@ -51,14 +52,21 @@ map<string, int, comparer> reserveWords;
 %}
 
 %%
-"{"[^}]*"}"									{col+=strlen(yytext);}
+[{][^}]*[}]									{ for (int a=0;a<strlen(yytext);a++) {
+											col++;
+											if (yytext[a]=='\n') {
+                                               col=1;
+                                               line++;
+													}
+												}
+											}
 [ \t]+										{col+=strlen(yytext);}
-[\n]										{line++; col=1;}	
-([a-zA-Z]|_)[a-zA-Z0-9]*					{return(tokenManager(ID));}
-[']([^']|(\'\'))*[']							{return(tokenManager(CHRLIT));}
+[\n]										{line++; col=1;}
+[_a-zA-Z][_a-zA-Z0-9]*						{return(tokenManager(ID));}
+[']([^']|(\'\'))*[']						{return(tokenManager(CHRLIT));} 
 [0-9]+										{return(tokenManager(INTLIT));}
-[0-9]+([eE][0-9]+)?							{return(tokenManager(REALIT));}
-[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?			{return(tokenManager(REALIT));}
+[0-9]+[Ee][+|-]?[0-9]+						{return(tokenManager(REALIT));}
+[0-9]+\.[0-9]+([Ee][+|-]?[0-9]+)?			{return(tokenManager(REALIT));}
 "+"											{return(tokenManager(PLUS));}
 "-"											{return(tokenManager(MINUS));}
 "*"											{return(tokenManager(STAR));}
@@ -79,8 +87,18 @@ map<string, int, comparer> reserveWords;
 "["											{return(tokenManager(LBRACKET));}
 "]"											{return(tokenManager(RBRACKET));}
 ".."										{return(tokenManager(RANGE));}
+[0-9]+\.[^0-9]+([Ee][+|-]?[0-9]+)?			{badTokenException("Invalid Integer Literal", yytext);}
+\.[0-9]+([Ee][+|-]?[0-9]+)?					{badTokenException("Invalid Integer Literal", yytext);}
 .											{badTokenException();}
 %%
+
+void badTokenException(string str1, char* str2)
+{
+	cout << "ERROR! Unrecognized token at: Line " << line << " Column " << col << endl;
+	cout << str1 << " -> " << str2; 
+	cout << "Program terminated" << endl;
+	exit (EXIT_FAILURE);
+}
 
 void badTokenException()
 {

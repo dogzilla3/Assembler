@@ -117,7 +117,7 @@ void printToken (int t, ostream& o, Scan L)
   o << " Spelling= '" << L.fetchSpelling () << "'" << endl;
 }
 
-void ScanMgr (FILE* i, ostream& o)
+void Mgr (FILE* i, ostream& o)
 {
   Scan L (i);
   for (;;)
@@ -160,6 +160,7 @@ int main (int argc, char* argv[])
     IllegalExtensionException ();
   }
 
+  string 
   strncpy (ofn, ifn, strlen(ifn));
   ofn[strlen (ifn)-4] = '\0';
   strcat (ofn, ".trc");
@@ -169,7 +170,7 @@ int main (int argc, char* argv[])
 
   cout << "Input file: " << ifn << " Trace File: " << ofn << endl;
 
-  ScanMgr (inFile, fout);
+  Mgr (inFile, fout);
 
   fclose (inFile);
   fout.close ();

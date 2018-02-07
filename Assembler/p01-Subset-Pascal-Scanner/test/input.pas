@@ -32,7 +32,6 @@ VAR
 WHILE    
 {this is a comment and stuff} 
 'a'
-'''
 {'ass' will throw an error, uncomment to find out}
 +
 -
