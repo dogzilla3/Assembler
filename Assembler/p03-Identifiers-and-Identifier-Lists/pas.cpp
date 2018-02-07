@@ -82,10 +82,10 @@ void ScanMgr (FILE* i, ostream& o)
 
 void ParseMgr (FILE* i, ostream& o)
 {
-  o << endl << "       **Start of Parse**" << endl << endl;
+  o << endl << "       **Start of Parse**" << endl;
   Parser P (i);
   P.Parse ();
-  o << endl << "       **End of Parse**" << endl << endl;
+  o << endl << endl << "       **End of Parse**" << endl << endl;
   cout << "End of parse" << endl;
 }
 

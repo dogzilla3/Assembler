@@ -67,8 +67,6 @@ void FileException (char* fn)
 
 void printToken (int t, ostream& o, Scan L)
 {
-  //if (t != 0) o << endl << "Token: Code=" << setw (3) << t << " Name=" << setw (10);
- 
   if (t != 0) o << left << "Token: Code=" << setw (4) << t << " Line= " << setw (3) << L.fetchLine () << " Col= " << setw (4) << L.fetchCol () << " Name= " << setw (12);
   switch (t)
   {
@@ -96,12 +94,12 @@ void printToken (int t, ostream& o, Scan L)
     case INTLIT:    o << "INTLIT"; break;
     case REALIT:    o << "REALIT"; break;
     case CHRLIT:    o << "CHRLIT"; break;
-    case COMMENT:   o << "COMMENT"; break;
     case AND:       o << "AND"; break;
     case ARRAY:     o << "ARRAY"; break;
+    case BEGIN_:    o << "BEGIN"; break;
     case DIV:       o << "DIV"; break;
     case DO:        o << "DO"; break;
-    case ELSE:      o << "ELSE"; break; 
+    case ELSE:      o << "ELSE"; break;
     case END:       o << "END"; break;
     case FUNCTION:  o << "FUNCTION"; break;
     case IF:        o << "IF"; break;
@@ -116,7 +114,6 @@ void printToken (int t, ostream& o, Scan L)
     case TYPE:      o << "TYPE"; break;
     case VAR:       o << "VAR"; break;
     case WHILE:     o << "WHILE"; break;
-    case BEGIN_:    o << "BEGIN"; break;
   }
   o << " Spelling= '" << L.fetchSpelling () << "'" << endl;
 }

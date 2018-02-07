@@ -93,9 +93,9 @@ void printToken (int t, ostream& o, Scan L)
     case INTLIT:    o << "INTLIT"; break;
     case REALIT:    o << "REALIT"; break;
     case CHRLIT:    o << "CHRLIT"; break;
-    case COMMENT:   o << "COMMENT"; break;
     case AND:       o << "AND"; break;
     case ARRAY:     o << "ARRAY"; break;
+    case BEGIN_:    o << "BEGIN"; break;
     case DIV:       o << "DIV"; break;
     case DO:        o << "DO"; break;
     case ELSE:      o << "ELSE"; break;
@@ -160,7 +160,6 @@ int main (int argc, char* argv[])
     IllegalExtensionException ();
   }
 
-  string 
   strncpy (ofn, ifn, strlen(ifn));
   ofn[strlen (ifn)-4] = '\0';
   strcat (ofn, ".trc");
