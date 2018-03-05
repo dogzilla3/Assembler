@@ -1,0 +1,2 @@
+identifier_list.o: identifier_list.cpp identifier_list.h
+	g++ -c -g identifier_list.cpp

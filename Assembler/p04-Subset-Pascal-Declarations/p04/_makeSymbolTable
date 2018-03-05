@@ -1,0 +1,47 @@
+dir = SymbolTable/
+
+#--------------------------------------------------------------------------------------
+obj		=	$(dir)Typ.o \
+			$(dir)Sym.o \
+			$(dir)LocalityStack.o \
+			$(dir)Locality.o \
+			$(dir)Namespace.o \
+			$(dir)Label.o \
+			$(dir)StandardTypes.o \
+			$(dir)yyerror.o \
+			$(dir)SymbolTable.o \
+#--------------------------------------------------------------------------------------
+Typ.o:				$(dir)Typ.cpp $(dir)Typ.h
+					g++ -c -g -o $(dir)Typ.o $(dir)Typ.cpp
+#--------------------------------------------------------------------------------------
+Sym.o:				$(dir)Sym.cpp $(dir)Sym.h $(dir)Label.h
+					g++ -c -g -o $(dir)Sym.o $(dir)Sym.cpp
+#--------------------------------------------------------------------------------------
+LocalityStack.o:	$(dir)LocalityStack.cpp $(dir)LocalityStack.h $(dir)Namespace.h
+					g++ -c -g -o $(dir)LocalityStack.o $(dir)LocalityStack.cpp
+#--------------------------------------------------------------------------------------
+Namespace.o:		$(dir)Namespace.cpp $(dir)Namespace.h $(dir)Sym.h $(dir)Typ.h
+					g++ -c -g -o $(dir)Namespace.o $(dir)Namespace.cpp
+#--------------------------------------------------------------------------------------
+Locality.o:			$(dir)Locality.cpp $(dir)Locality.h 
+					g++ -c -g -o $(dir)Locality.o $(dir)Locality.cpp
+#--------------------------------------------------------------------------------------
+Label.o:			$(dir)Label.cpp $(dir)Label.h 
+					g++ -c -g -o $(dir)Label.o $(dir)Label.cpp
+#--------------------------------------------------------------------------------------
+StandardTypes.o:	$(dir)StandardTypes.cpp $(dir)StandardTypes.h 
+					g++ -c -g -o $(dir)StandardTypes.o $(dir)StandardTypes.cpp
+#--------------------------------------------------------------------------------------
+yyerror.o:			$(dir)yyerror.cpp $(dir)yyerror.h 
+					g++ -c -g -o $(dir)yyerror.o $(dir)yyerror.cpp
+#--------------------------------------------------------------------------------------
+SymbolTable.o:		../slist.h \
+					$(dir)SymbolTable.cpp \
+					$(dir)SymbolTable.h \
+					$(dir)LocalityStack.h \
+					$(dir)Locality.h \
+					$(dir)Namespace.h \
+					$(dir)Sym.h \
+					$(dir)Typ.h 					
+					g++ -c -g -o $(dir)SymbolTable.o $(dir)SymbolTable.cpp
+#--------------------------------------------------------------------------------------

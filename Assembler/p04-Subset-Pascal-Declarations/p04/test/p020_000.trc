@@ -1,0 +1,168 @@
+
+Token: Code=293  Line= 12  Col= 8    Name= PROGRAM      Spelling= 'program'
+Token: Code=300  Line= 12  Col= 17   Name= ID           Spelling= 'p020_000'
+Token: Code=265  Line= 12  Col= 18   Name= SEMICOLON    Spelling= ';'
+#05 program_parameters -> EMPTY
+#02 program_head -> program ID(p020_000) program_parameters SEMICOLON
+#10 declarations -> EMPTY
+Token: Code=292  Line= 13  Col= 12   Name= PROCEDURE    Spelling= 'procedure'
+#15 subprogram_declarations -> EMPTY
+Token: Code=300  Line= 13  Col= 18   Name= ID           Spelling= 'hello'
+Token: Code=265  Line= 13  Col= 19   Name= SEMICOLON    Spelling= ';'
+#20 subprogram_parameters -> EMPTY
+#19 subprogram_head -> procedure ID(hello) subprogram_parameters ;
+#10 declarations -> EMPTY
+Token: Code=281  Line= 14  Col= 8    Name= BEGIN        Spelling= 'begin'
+Token: Code=300  Line= 15  Col= 12   Name= ID           Spelling= 'writeln'
+Token: Code=273  Line= 15  Col= 13   Name= LPAREN       Spelling= '('
+Token: Code=303  Line= 15  Col= 33   Name= CHRLIT       Spelling= ''Hello, I love you.''
+#70 factor -> CHRLIT('Hello, I love you.')
+#56 term -> factor
+Token: Code=274  Line= 15  Col= 34   Name= RPAREN       Spelling= ')'
+#48 simple_expression -> term
+#40 expression -> simple_expression
+#38 expression_list -> expression
+#37 ID(writeln) ( expression_list )
+#30 statement -> procedure_statement
+#27 statement_list -> statement
+Token: Code=285  Line= 16  Col= 6    Name= END          Spelling= 'end'
+#26 optional_statements -> statement_list
+#24 compound_statement -> BEGIN optional_statements END
+#17 subprogram_declarations -> subprogram_head declarations compound_statement
+Locality: lexical level 2
+
+    Symbol(Procedure Symbol) id(hello)
+      type(Subprogram)
+          Return Type
+            type(Void)
+              size(0) alignment(0)
+          Parameter Types
+      lexicallevel(1) elabel(L00004) splabel(L00005) eplabel(L00006)
+
+Token: Code=265  Line= 16  Col= 14   Name= SEMICOLON    Spelling= ';'
+#16 subprogram_declarations -> subprogram_declarations subprogram_declaration ;
+Token: Code=281  Line= 17  Col= 6    Name= BEGIN        Spelling= 'begin'
+#03 program_declarations -> declarations subprogram_declarations
+Token: Code=300  Line= 18  Col= 8    Name= ID           Spelling= 'hello'
+Token: Code=285  Line= 19  Col= 4    Name= END          Spelling= 'end'
+#36 procedure_statement -> ID(hello)
+#30 statement -> procedure_statement
+#27 statement_list -> statement
+#26 optional_statements -> statement_list
+#24 compound_statement -> BEGIN optional_statements END
+Token: Code=263  Line= 19  Col= 15   Name= PERIOD       Spelling= '.'
+#04 program_body -> compound_statement PERIOD
+#01 program -> program_head program_declarations program_body
+Locality: lexical level 1
+
+
+Locality: lexical level 0
+
+Symbol(Standard Function Symbol) id(abs)
+  type(Void)
+    size(0) alignment(0)
+  cspid(abs)
+Symbol(Type Symbol) id(boolean)
+  type(Boolean)
+    size(1) alignment(1)
+Symbol(Type Symbol) id(char)
+  type(Character)
+    size(1) alignment(1)
+Symbol(Standard Function Symbol) id(chr)
+  type(Void)
+    size(0) alignment(0)
+  cspid(chr)
+Symbol(Constant Symbol) id(false)
+  type(Boolean)
+    size(1) alignment(1)
+  Constant value(0)
+    type(Boolean)
+      size(1) alignment(1)
+Symbol(Type Symbol) id(integer)
+  type(Integer)
+    size(1) alignment(1)
+Symbol(Standard Function Symbol) id(ord)
+  type(Void)
+    size(0) alignment(0)
+  cspid(ord)
+Symbol(Program Symbol) id(p020_000)
+  type(Void)
+    size(0) alignment(0)
+  lexicallevel(0) elabel(L00001) splabel(L00002) eplabel(L00003)
+Symbol(Standard Function Symbol) id(pred)
+  type(Void)
+    size(0) alignment(0)
+  cspid(dec)
+Symbol(Standard Procedure Symbol) id(readchar)
+  type(Void)
+    size(0) alignment(0)
+  cspid(rdc)
+Symbol(Standard Procedure Symbol) id(readinteger)
+  type(Void)
+    size(0) alignment(0)
+  cspid(rdi)
+Symbol(Standard Procedure Symbol) id(readln)
+  type(Void)
+    size(0) alignment(0)
+  cspid(rln)
+Symbol(Standard Procedure Symbol) id(readreal)
+  type(Void)
+    size(0) alignment(0)
+  cspid(rdr)
+Symbol(Standard Procedure Symbol) id(readstring)
+  type(Void)
+    size(0) alignment(0)
+  cspid(rds)
+Symbol(Type Symbol) id(real)
+  type(Real)
+    size(1) alignment(1)
+Symbol(Standard Function Symbol) id(round)
+  type(Void)
+    size(0) alignment(0)
+  cspid(rnd)
+Symbol(Standard Function Symbol) id(sqrt)
+  type(Void)
+    size(0) alignment(0)
+  cspid(sqt)
+Symbol(Standard Function Symbol) id(succ)
+  type(Void)
+    size(0) alignment(0)
+  cspid(inc)
+Symbol(Constant Symbol) id(true)
+  type(Boolean)
+    size(1) alignment(1)
+  Constant value(1)
+    type(Boolean)
+      size(1) alignment(1)
+Symbol(Standard Function Symbol) id(trunc)
+  type(Void)
+    size(0) alignment(0)
+  cspid(trc)
+Symbol(Standard Procedure Symbol) id(writeboolean)
+  type(Void)
+    size(0) alignment(0)
+  cspid(wrb)
+Symbol(Standard Procedure Symbol) id(writechar)
+  type(Void)
+    size(0) alignment(0)
+  cspid(wrc)
+Symbol(Standard Procedure Symbol) id(writeexponential)
+  type(Void)
+    size(0) alignment(0)
+  cspid(wre)
+Symbol(Standard Procedure Symbol) id(writefixed)
+  type(Void)
+    size(0) alignment(0)
+  cspid(wrf)
+Symbol(Standard Procedure Symbol) id(writeinteger)
+  type(Void)
+    size(0) alignment(0)
+  cspid(wri)
+Symbol(Standard Procedure Symbol) id(writeln)
+  type(Void)
+    size(0) alignment(0)
+  cspid(wln)
+Symbol(Standard Procedure Symbol) id(writestring)
+  type(Void)
+    size(0) alignment(0)
+  cspid(wrs)
