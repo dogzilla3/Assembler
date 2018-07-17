@@ -1,5 +1,0 @@
-
-          lda       0         05        
-          ldc       b         1         
-          not                           
-          sti       b                   

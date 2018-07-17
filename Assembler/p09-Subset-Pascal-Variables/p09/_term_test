@@ -1,9 +1,0 @@
-echo   term_t00.pas; ./pas ./test/term_t00.pas; echo;
-echo   term_t01.pas; ./pas ./test/term_t01.pas; echo;
-echo   term_t02.pas; ./pas ./test/term_t02.pas; echo;
-echo   term_t03.pas; ./pas ./test/term_t03.pas; echo;
-echo   term_t04.pas; ./pas ./test/term_t04.pas; echo;
-echo   term_t05.pas; ./pas ./test/term_t05.pas; echo;
-echo   term_t06.pas; ./pas ./test/term_t06.pas; echo;
-echo   term_t07.pas; ./pas ./test/term_t07.pas; echo;
-echo   term_t08.pas; ./pas ./test/term_t08.pas; echo;

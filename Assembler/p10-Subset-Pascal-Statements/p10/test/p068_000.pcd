@@ -1,4 +1,0 @@
-
-          lda       0         05        
-          ldc       i         68        
-          sti       i                   

@@ -1,8 +1,0 @@
-
-          ldc       i         2         
-          lda       0         05        
-          ldc       i         1         
-          sbi                           
-          ixa                 1         
-          ldc       i         10        
-          sti       i                   
