@@ -1,0 +1,14 @@
+echo   se_se00.pas; ./pas ./test/se_se00.pas; echo;
+echo   se_se01.pas; ./pas ./test/se_se01.pas; echo;
+echo   se_se02.pas; ./pas ./test/se_se02.pas; echo;
+echo   se_se03.pas; ./pas ./test/se_se03.pas; echo;
+echo   se_se04.pas; ./pas ./test/se_se04.pas; echo;
+echo   se_se05.pas; ./pas ./test/se_se05.pas; echo;
+echo   se_se06.pas; ./pas ./test/se_se06.pas; echo;
+echo   se_se07.pas; ./pas ./test/se_se07.pas; echo;
+echo   se_se08.pas; ./pas ./test/se_se08.pas; echo;
+echo   se_se09.pas; ./pas ./test/se_se09.pas; echo;
+echo   se_se10.pas; ./pas ./test/se_se10.pas; echo;
+echo   se_se11.pas; ./pas ./test/se_se11.pas; echo;
+echo   se_se12.pas; ./pas ./test/se_se12.pas; echo;
+echo   se_se13.pas; ./pas ./test/se_se13.pas; echo;

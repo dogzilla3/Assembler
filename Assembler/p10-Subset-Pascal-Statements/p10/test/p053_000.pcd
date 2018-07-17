@@ -1,0 +1,41 @@
+
+          lda       0         05        
+          ldc       i         1         
+          sti       i                   
+          lda       0         06        
+          ldc       i         2         
+          sti       i                   
+          lda       0         07        
+          ldc       i         3         
+          sti       i                   
+          lda       0         08        
+          ldc       b         0         
+          sti       b                   
+          lda       0         09        
+          ldc       b         1         
+          sti       b                   
+          lda       0         010       
+          ldc       b         0         
+          sti       b                   
+          lda       0         05        
+          lvi       0         06        
+          sti       i                   
+          lda       0         05        
+          lvi       0         06        
+          ngi                           
+          sti       i                   
+          lda       0         05        
+          lvi       0         06        
+          lvi       0         07        
+          adi                           
+          sti       i                   
+          lda       0         05        
+          lvi       0         06        
+          lvi       0         07        
+          sbi                           
+          sti       i                   
+          lda       0         08        
+          lvb       0         09        
+          lvb       0         010       
+          ior                           
+          sti       b                   

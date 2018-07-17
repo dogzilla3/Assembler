@@ -1,0 +1,25 @@
+
+          ldc       s         'How much cash do you have? '
+          csp                 wrs       
+          lvr       0         05        
+          csp                 rdr       
+          csp                 rln       
+          lvr       0         05        
+          ldc       r         100.0     
+          les       r                   
+          ldc       s         'You wicked and slothful person.'
+          csp                 wrs       
+          csp                 wln       
+          ldc       s         'I''d never go out with you.'
+          csp                 wrs       
+          csp                 wln       
+          ldc       s         'Come on, honey, let''s have a good time tonight!'
+          csp                 wrs       
+          csp                 wln       
+          fjp                 L00004    
+          ujp                 L00005    
+L00004                                  
+L00005                                  
+          ldc       s         'See you later!'
+          csp                 wrs       
+          csp                 wln       

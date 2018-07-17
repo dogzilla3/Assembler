@@ -1,0 +1,4 @@
+echo   exp_e00.pas; ./pas ./test/exp_e00.pas; echo;
+echo   exp_e01.pas; ./pas ./test/exp_e01.pas; echo;
+echo   exp_e02.pas; ./pas ./test/exp_e02.pas; echo;
+echo   exp_e03.pas; ./pas ./test/exp_e03.pas; echo;

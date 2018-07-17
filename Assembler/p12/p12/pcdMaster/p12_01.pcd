@@ -1,0 +1,12 @@
+
+L00001    ent       sp        L00002    
+          ent       ep        L00003    
+          ldc       s         'Hello, I love you.'
+          csp                 wrs       
+          csp                 wln       
+          rtn       p                   
+#define   L00002    4                   
+#define   L00003    5                   
+          mst       0                   
+          cup       0         L00001    
+          stp                           

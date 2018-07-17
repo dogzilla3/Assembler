@@ -1,0 +1,4 @@
+
+          lda       0         05        
+          ldc       c         'h'       
+          sti       c                   

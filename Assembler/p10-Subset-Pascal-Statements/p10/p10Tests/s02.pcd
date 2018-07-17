@@ -1,0 +1,8 @@
+
+          lvi       0         05        
+          ldc       i         5         
+          adi                           
+          lvb       0         06        
+          not                           
+          mst       0                   
+          cup       2         L00004    

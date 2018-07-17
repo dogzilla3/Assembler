@@ -1,0 +1,8 @@
+echo   var_v00.pas; ./pas ./test/var_v00.pas; echo;
+echo   var_v01.pas; ./pas ./test/var_v01.pas; echo;
+echo   var_v02.pas; ./pas ./test/var_v02.pas; echo;
+echo   var_v03.pas; ./pas ./test/var_v03.pas; echo;
+echo   var_v04.pas; ./pas ./test/var_v04.pas; echo;
+echo   var_v05.pas; ./pas ./test/var_v05.pas; echo;
+echo   var_v06.pas; ./pas ./test/var_v06.pas; echo;
+echo   var_v07.pas; ./pas ./test/var_v07.pas; echo;

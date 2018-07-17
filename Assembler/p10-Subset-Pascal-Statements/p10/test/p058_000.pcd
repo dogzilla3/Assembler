@@ -1,0 +1,53 @@
+
+          lda       0         011       
+          ldc       b         1         
+          sti       b                   
+          lda       0         012       
+          ldc       b         1         
+          sti       b                   
+          lda       0         013       
+          ldc       b         1         
+          sti       b                   
+          lda       0         05        
+          ldc       i         1         
+          sti       i                   
+          lda       0         06        
+          ldc       i         2         
+          sti       i                   
+          lda       0         07        
+          ldc       i         3         
+          sti       i                   
+          lda       0         08        
+          ldc       r         1.0       
+          sti       r                   
+          lda       0         09        
+          ldc       r         2.0       
+          sti       r                   
+          lda       0         010       
+          ldc       r         3.0       
+          sti       r                   
+          lda       0         05        
+          lvi       0         06        
+          lvi       0         07        
+          mpi                           
+          sti       r                   
+          lda       0         08        
+          lvr       0         09        
+          lvr       0         010       
+          dvr                           
+          sti       r                   
+          lda       0         05        
+          lvi       0         06        
+          lvi       0         07        
+          dvi                           
+          sti       i                   
+          lda       0         05        
+          lvi       0         06        
+          lvi       0         07        
+          mod                           
+          sti       i                   
+          lda       0         011       
+          lvb       0         012       
+          lvb       0         013       
+          and                           
+          sti       b                   

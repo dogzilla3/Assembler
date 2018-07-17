@@ -1,0 +1,14 @@
+echo p10_01.pas
+../pas p10_01.pas
+echo p10_02.pas
+../pas p10_02.pas
+echo p10_03.pas
+../pas p10_03.pas
+echo p10_04.pas
+../pas p10_04.pas
+echo p10_05.pas
+../pas p10_05.pas
+echo p10_06.pas
+../pas p10_06.pas
+echo p10_07.pas
+../pas p10_07.pas

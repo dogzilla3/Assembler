@@ -1,0 +1,6 @@
+echo   factor_id.pas; ./pas ./test/factor_id.pas; echo;
+echo   factor_id2.pas; ./pas ./test/factor_id2.pas; echo;
+echo   factor_chrlit.pas; ./pas ./test/factor_chrlit.pas; echo;
+echo   factor_intlit.pas; ./pas ./test/factor_intlit.pas; echo;
+echo   factor_realit.pas; ./pas ./test/factor_realit.pas; echo;
+echo   factor_id3.pas; ./pas ./test/factor_id3.pas; echo;

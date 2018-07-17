@@ -1,0 +1,20 @@
+
+          lvi       0         05        
+          lvi       0         06        
+          grt       i                   
+          lda       0         00        
+          lvi       0         05        
+          sti       i                   
+          lda       0         00        
+          lvi       0         06        
+          sti       i                   
+          fjp                 L00007    
+          ujp                 L00008    
+L00007                                  
+L00008                                  
+          lda       0         05        
+          ldc       i         3         
+          ldc       i         4         
+          mst       0                   
+          cup       2         L00004    
+          sti       i                   

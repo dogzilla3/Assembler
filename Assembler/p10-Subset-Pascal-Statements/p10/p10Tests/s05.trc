@@ -1,0 +1,350 @@
+
+Token: Code=293  Line= 1   Col= 8    Name= PROGRAM      Spelling= 'program'
+Token: Code=300  Line= 1   Col= 12   Name= ID           Spelling= 's05'
+Token: Code=265  Line= 1   Col= 13   Name= SEMICOLON    Spelling= ';'
+#05 program_parameters -> EMPTY
+#02 program_head -> program ID(s05) program_parameters SEMICOLON
+L00001
+
+L00002
+
+L00003
+
+#10 variable_declarations -> EMPTY
+Token: Code=297  Line= 2   Col= 5    Name= VAR          Spelling= 'var'
+Token: Code=300  Line= 2   Col= 7    Name= ID           Spelling= 'a'
+#08 identifier_list -> ID(a) identifier_list={a}
+Token: Code=264  Line= 2   Col= 8    Name= COMMA        Spelling= ','
+Token: Code=300  Line= 2   Col= 9    Name= ID           Spelling= 'c'
+#09 identifier_list -> identifier_list , ID(c) identifier_list={a,c}
+Token: Code=266  Line= 2   Col= 10   Name= COLON        Spelling= ':'
+Token: Code=300  Line= 2   Col= 17   Name= ID           Spelling= 'integer'
+#14 standard_type -> ID(integer)
+Symbol(Type Symbol) id(integer)
+  type(Integer)
+    size(1) alignment(1)
+#12 type -> standard_type
+Token: Code=265  Line= 2   Col= 18   Name= SEMICOLON    Spelling= ';'
+#11 variable_declarations -> variable_declarations VAR identifier_list  {a, c} : type SEMICOLON
+Token: Code=281  Line= 3   Col= 6    Name= BEGIN        Spelling= 'begin'
+#15 subprogram_declarations -> EMPTY
+#03 program_declarations -> declarations subprogram_declarations
+Token: Code=300  Line= 4   Col= 3    Name= ID           Spelling= 'c'
+Token: Code=262  Line= 4   Col= 5    Name= ASSIGN       Spelling= ':='
+#34 variable -> ID(c)
+Symbol(Variable Symbol) id(c)
+  type(Integer)
+    size(1) alignment(1)
+  lexicallevel(1) address(6)
+          lda       0         06        
+Token: Code=301  Line= 4   Col= 7    Name= INTLIT       Spelling= '10'
+#68 factor -> INTLIT(10)
+          ldc       i         10        
+#56 term -> factor
+Token: Code=265  Line= 4   Col= 8    Name= SEMICOLON    Spelling= ';'
+#48 simple_expression -> term
+#40 expression -> simple_expression
+#29 statement -> variable := expression
+          lda       0         06        
+          ldc       i         10        
+          sti       i                   
+#27 statement_list -> statement
+          lda       0         06        
+          ldc       i         10        
+          sti       i                   
+Token: Code=298  Line= 5   Col= 7    Name= WHILE        Spelling= 'while'
+Token: Code=300  Line= 5   Col= 9    Name= ID           Spelling= 'c'
+Token: Code=271  Line= 5   Col= 10   Name= GRT          Spelling= '>'
+#63 factor -> ID(c)
+Symbol(Variable Symbol) id(c)
+  type(Integer)
+    size(1) alignment(1)
+  lexicallevel(1) address(6)
+          lvi       0         06        
+#56 term -> factor
+#48 simple_expression -> term
+#46 relop -> >
+Token: Code=301  Line= 5   Col= 11   Name= INTLIT       Spelling= '0'
+#68 factor -> INTLIT(0)
+          ldc       i         0         
+#56 term -> factor
+Token: Code=283  Line= 5   Col= 14   Name= DO           Spelling= 'do'
+#48 simple_expression -> term
+#41 expression -> simple_expression relop simple_expression
+          lvi       0         06        
+          ldc       i         0         
+          grt       i                   
+Token: Code=300  Line= 5   Col= 16   Name= ID           Spelling= 'c'
+Token: Code=262  Line= 5   Col= 18   Name= ASSIGN       Spelling= ':='
+#34 variable -> ID(c)
+Symbol(Variable Symbol) id(c)
+  type(Integer)
+    size(1) alignment(1)
+  lexicallevel(1) address(6)
+          lda       0         06        
+Token: Code=300  Line= 5   Col= 19   Name= ID           Spelling= 'c'
+Token: Code=259  Line= 5   Col= 20   Name= MINUS        Spelling= '-'
+#63 factor -> ID(c)
+Symbol(Variable Symbol) id(c)
+  type(Integer)
+    size(1) alignment(1)
+  lexicallevel(1) address(6)
+          lvi       0         06        
+#56 term -> factor
+#48 simple_expression -> term
+#54 addop -> -
+Token: Code=301  Line= 5   Col= 21   Name= INTLIT       Spelling= '1'
+#68 factor -> INTLIT(1)
+          ldc       i         1         
+#56 term -> factor
+Token: Code=265  Line= 5   Col= 22   Name= SEMICOLON    Spelling= ';'
+#50 simple_expression -> simple_expression addop term
+          lvi       0         06        
+          ldc       i         1         
+          sbi                           
+#40 expression -> simple_expression
+#29 statement -> variable := expression
+          lda       0         06        
+          lvi       0         06        
+          ldc       i         1         
+          sbi                           
+          sti       i                   
+#33 statement -> while expression do statement
+L00004
+
+L00005
+
+L00004                                  
+          lvi       0         06        
+          ldc       i         0         
+          grt       i                   
+          fjp                 L00005    
+          lda       0         06        
+          lvi       0         06        
+          ldc       i         1         
+          sbi                           
+          sti       i                   
+          ujp                 L00004    
+L00005                                  
+#28 statement_list -> statement_list SEMICOLON statement
+          lda       0         06        
+          ldc       i         10        
+          sti       i                   
+L00004                                  
+          lvi       0         06        
+          ldc       i         0         
+          grt       i                   
+          fjp                 L00005    
+          lda       0         06        
+          lvi       0         06        
+          ldc       i         1         
+          sbi                           
+          sti       i                   
+          ujp                 L00004    
+L00005                                  
+Token: Code=300  Line= 6   Col= 3    Name= ID           Spelling= 'a'
+Token: Code=262  Line= 6   Col= 5    Name= ASSIGN       Spelling= ':='
+#34 variable -> ID(a)
+Symbol(Variable Symbol) id(a)
+  type(Integer)
+    size(1) alignment(1)
+  lexicallevel(1) address(5)
+          lda       0         05        
+Token: Code=301  Line= 6   Col= 7    Name= INTLIT       Spelling= '29'
+#68 factor -> INTLIT(29)
+          ldc       i         29        
+#56 term -> factor
+Token: Code=285  Line= 7   Col= 4    Name= END          Spelling= 'end'
+#48 simple_expression -> term
+#40 expression -> simple_expression
+#29 statement -> variable := expression
+          lda       0         05        
+          ldc       i         29        
+          sti       i                   
+#28 statement_list -> statement_list SEMICOLON statement
+          lda       0         06        
+          ldc       i         10        
+          sti       i                   
+L00004                                  
+          lvi       0         06        
+          ldc       i         0         
+          grt       i                   
+          fjp                 L00005    
+          lda       0         06        
+          lvi       0         06        
+          ldc       i         1         
+          sbi                           
+          sti       i                   
+          ujp                 L00004    
+L00005                                  
+          lda       0         05        
+          ldc       i         29        
+          sti       i                   
+#26 optional_statements -> statement_list
+          lda       0         06        
+          ldc       i         10        
+          sti       i                   
+L00004                                  
+          lvi       0         06        
+          ldc       i         0         
+          grt       i                   
+          fjp                 L00005    
+          lda       0         06        
+          lvi       0         06        
+          ldc       i         1         
+          sbi                           
+          sti       i                   
+          ujp                 L00004    
+L00005                                  
+          lda       0         05        
+          ldc       i         29        
+          sti       i                   
+#24 compound_statement -> BEGIN optional_statements END
+          lda       0         06        
+          ldc       i         10        
+          sti       i                   
+L00004                                  
+          lvi       0         06        
+          ldc       i         0         
+          grt       i                   
+          fjp                 L00005    
+          lda       0         06        
+          lvi       0         06        
+          ldc       i         1         
+          sbi                           
+          sti       i                   
+          ujp                 L00004    
+L00005                                  
+          lda       0         05        
+          ldc       i         29        
+          sti       i                   
+Token: Code=263  Line= 7   Col= 10   Name= PERIOD       Spelling= '.'
+#04 program_body -> compound_statement PERIOD
+#01 program -> program_head program_declarations program_body
+Locality: lexical level 1
+
+  Symbol(Variable Symbol) id(a)
+    type(Integer)
+      size(1) alignment(1)
+    lexicallevel(1) address(5)
+  Symbol(Variable Symbol) id(c)
+    type(Integer)
+      size(1) alignment(1)
+    lexicallevel(1) address(6)
+
+Locality: lexical level 0
+
+Symbol(Standard Function Symbol) id(abs)
+  type(Void)
+    size(0) alignment(0)
+  cspid(abs)
+Symbol(Type Symbol) id(boolean)
+  type(Boolean)
+    size(1) alignment(1)
+Symbol(Type Symbol) id(char)
+  type(Character)
+    size(1) alignment(1)
+Symbol(Standard Function Symbol) id(chr)
+  type(Void)
+    size(0) alignment(0)
+  cspid(chr)
+Symbol(Constant Symbol) id(false)
+  type(Boolean)
+    size(1) alignment(1)
+  Constant value(0)
+    type(Boolean)
+      size(1) alignment(1)
+Symbol(Type Symbol) id(integer)
+  type(Integer)
+    size(1) alignment(1)
+Symbol(Standard Function Symbol) id(ord)
+  type(Void)
+    size(0) alignment(0)
+  cspid(ord)
+Symbol(Standard Function Symbol) id(pred)
+  type(Void)
+    size(0) alignment(0)
+  cspid(dec)
+Symbol(Standard Procedure Symbol) id(readchar)
+  type(Void)
+    size(0) alignment(0)
+  cspid(rdc)
+Symbol(Standard Procedure Symbol) id(readinteger)
+  type(Void)
+    size(0) alignment(0)
+  cspid(rdi)
+Symbol(Standard Procedure Symbol) id(readln)
+  type(Void)
+    size(0) alignment(0)
+  cspid(rln)
+Symbol(Standard Procedure Symbol) id(readreal)
+  type(Void)
+    size(0) alignment(0)
+  cspid(rdr)
+Symbol(Standard Procedure Symbol) id(readstring)
+  type(Void)
+    size(0) alignment(0)
+  cspid(rds)
+Symbol(Type Symbol) id(real)
+  type(Real)
+    size(1) alignment(1)
+Symbol(Standard Function Symbol) id(round)
+  type(Void)
+    size(0) alignment(0)
+  cspid(rnd)
+In Print Function
+
+Symbol(Procedure Symbol) id(s05)
+  type(Subprogram)
+      Return Type
+        type(Void)
+          size(0) alignment(0)
+      Parameter Types
+  lexicallevel(0) elabel(L00001) splabel(L00002) eplabel(L00003)
+Symbol(Standard Function Symbol) id(sqrt)
+  type(Void)
+    size(0) alignment(0)
+  cspid(sqt)
+Symbol(Standard Function Symbol) id(succ)
+  type(Void)
+    size(0) alignment(0)
+  cspid(inc)
+Symbol(Constant Symbol) id(true)
+  type(Boolean)
+    size(1) alignment(1)
+  Constant value(1)
+    type(Boolean)
+      size(1) alignment(1)
+Symbol(Standard Function Symbol) id(trunc)
+  type(Void)
+    size(0) alignment(0)
+  cspid(trc)
+Symbol(Standard Procedure Symbol) id(writeboolean)
+  type(Void)
+    size(0) alignment(0)
+  cspid(wrb)
+Symbol(Standard Procedure Symbol) id(writechar)
+  type(Void)
+    size(0) alignment(0)
+  cspid(wrc)
+Symbol(Standard Procedure Symbol) id(writeexponential)
+  type(Void)
+    size(0) alignment(0)
+  cspid(wre)
+Symbol(Standard Procedure Symbol) id(writefixed)
+  type(Void)
+    size(0) alignment(0)
+  cspid(wrf)
+Symbol(Standard Procedure Symbol) id(writeinteger)
+  type(Void)
+    size(0) alignment(0)
+  cspid(wri)
+Symbol(Standard Procedure Symbol) id(writeln)
+  type(Void)
+    size(0) alignment(0)
+  cspid(wln)
+Symbol(Standard Procedure Symbol) id(writestring)
+  type(Void)
+    size(0) alignment(0)
+  cspid(wrs)
+

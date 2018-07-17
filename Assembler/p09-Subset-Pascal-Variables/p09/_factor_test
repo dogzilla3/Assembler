@@ -1,0 +1,14 @@
+echo   factor_f00.pas; ./pas ./test/factor_f00.pas; echo;
+echo   factor_f01.pas; ./pas ./test/factor_f01.pas; echo;
+echo   factor_f02.pas; ./pas ./test/factor_f02.pas; echo;
+echo   factor_f03.pas; ./pas ./test/factor_f03.pas; echo;
+echo   factor_f04.pas; ./pas ./test/factor_f04.pas; echo;
+echo   factor_f05.pas; ./pas ./test/factor_f05.pas; echo;
+echo   factor_f06.pas; ./pas ./test/factor_f06.pas; echo;
+echo   factor_f07.pas; ./pas ./test/factor_f07.pas; echo;
+echo   factor_f08.pas; ./pas ./test/factor_f08.pas; echo;
+echo   factor_f09.pas; ./pas ./test/factor_f09.pas; echo;
+echo   factor_f10.pas; ./pas ./test/factor_f10.pas; echo;
+echo   factor_f11.pas; ./pas ./test/factor_f11.pas; echo;
+echo   factor_f12.pas; ./pas ./test/factor_f12.pas; echo;
+echo   factor_f13.pas; ./pas ./test/factor_f13.pas; echo;

@@ -1,0 +1,57 @@
+#------------------------------------------------------------------------------
+#Author: Gregory Levy
+#Student ID: *20444120
+#E-Mail: glevy@uco.edu
+#Course: CMSC 2123 – Discrete Structures
+#CRN: 21061, Spring, 2017
+#Project: p02
+#Due: February 10, 2017
+#Account: tt049
+#
+#Author: William Bohanan
+#Student ID: *20276952
+#E-Mail: wbohanan@uco.edu
+#Course: CMSC 4173 – Translator Design
+#CRN: 25838, Spring, 2018
+#Project: p02
+#Due: February 10, 2017
+#Account: tt067
+#-------------------------------------------------------------------------------
+
+#-------------------------------------------------------------------------------
+#_checkOutputs
+#This bash script checks our pcd files vs know good files
+#-------------------------------------------------------------------------------
+
+echo 
+echo 
+echo **Begin File Check**
+echo 
+
+echo   p09_01.pcd; ./FileChecker ./test/p09_01.pcd ./pcdMaster/p09_01.pcd; echo;
+echo   p09_02.pcd; ./FileChecker ./test/p09_02.pcd ./pcdMaster/p09_02.pcd; echo;
+echo   p09_03.pcd; ./FileChecker ./test/p09_03.pcd ./pcdMaster/p09_03.pcd; echo;
+echo   p09_04.pcd; ./FileChecker ./test/p09_04.pcd ./pcdMaster/p09_04.pcd; echo;
+echo   p09_05.pcd; ./FileChecker ./test/p09_05.pcd ./pcdMaster/p09_05.pcd; echo;
+echo   p09_06.pcd; ./FileChecker ./test/p09_06.pcd ./pcdMaster/p09_06.pcd; echo;
+echo   p09_07.pcd; ./FileChecker ./test/p09_07.pcd ./pcdMaster/p09_07.pcd; echo;
+echo   p09_08.pcd; ./FileChecker ./test/p09_08.pcd ./pcdMaster/p09_08.pcd; echo;
+echo   p09_09.pcd; ./FileChecker ./test/p09_09.pcd ./pcdMaster/p09_09.pcd; echo;
+echo   p09_10.pcd; ./FileChecker ./test/p09_10.pcd ./pcdMaster/p09_10.pcd; echo;
+echo   p09_11.pcd; ./FileChecker ./test/p09_11.pcd ./pcdMaster/p09_11.pcd; echo;
+echo   p09_12.pcd; ./FileChecker ./test/p09_12.pcd ./pcdMaster/p09_12.pcd; echo;
+echo   p09_13.pcd; ./FileChecker ./test/p09_13.pcd ./pcdMaster/p09_13.pcd; echo;
+echo   p09_14.pcd; ./FileChecker ./test/p09_14.pcd ./pcdMaster/p09_14.pcd; echo;
+echo   p09_15.pcd; ./FileChecker ./test/p09_15.pcd ./pcdMaster/p09_15.pcd; echo;
+echo   p10_01.pcd; ./FileChecker ./test/p10_01.pcd ./pcdMaster/p10_01.pcd; echo;
+echo   p10_02.pcd; ./FileChecker ./test/p10_02.pcd ./pcdMaster/p10_02.pcd; echo;
+echo   p10_03.pcd; ./FileChecker ./test/p10_03.pcd ./pcdMaster/p10_03.pcd; echo;
+echo   p10_04.pcd; ./FileChecker ./test/p10_04.pcd ./pcdMaster/p10_04.pcd; echo;
+echo   p10_05.pcd; ./FileChecker ./test/p10_05.pcd ./pcdMaster/p10_05.pcd; echo;
+echo   p10_06.pcd; ./FileChecker ./test/p10_06.pcd ./pcdMaster/p10_06.pcd; echo;
+echo   p10_07.pcd; ./FileChecker ./test/p10_07.pcd ./pcdMaster/p10_07.pcd; echo;
+
+echo 
+echo **End File Check**
+echo
+echo

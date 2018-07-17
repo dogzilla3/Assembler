@@ -1,0 +1,106 @@
+#------------------------------------------------------------------------------
+#Author: Gregory Levy
+#Student ID: *20444120
+#E-Mail: glevy@uco.edu
+#Course: CMSC 2123 – Discrete Structures
+#CRN: 21061, Spring, 2017
+#Project: p02
+#Due: February 10, 2017
+#Account: tt049
+#
+#Author: William Bohanan
+#Student ID: *20276952
+#E-Mail: wbohanan@uco.edu
+#Course: CMSC 4173 – Translator Design
+#CRN: 25838, Spring, 2018
+#Project: p02
+#Due: February 10, 2017
+#Account: tt067
+#-------------------------------------------------------------------------------
+
+#-------------------------------------------------------------------------------
+#_testAll
+#This bash script calls pas with the various test files
+#-------------------------------------------------------------------------------
+
+echo 
+echo 
+echo **Begin Tests**
+echo 
+
+echo   p001_000.pas; ./pas ./test/AllRules/p001_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p002_000.pas; ./pas ./test/AllRules/p002_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p003_000.pas; ./pas ./test/AllRules/p003_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p004_000.pas; ./pas ./test/AllRules/p004_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p005_000.pas; ./pas ./test/AllRules/p005_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p006_000.pas; ./pas ./test/AllRules/p006_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p007_000.pas; ./pas ./test/AllRules/p007_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p008_000.pas; ./pas ./test/AllRules/p008_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p009_000.pas; ./pas ./test/AllRules/p009_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p010_000.pas; ./pas ./test/AllRules/p010_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p011_000.pas; ./pas ./test/AllRules/p011_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p012_000.pas; ./pas ./test/AllRules/p012_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p013_000.pas; ./pas ./test/AllRules/p013_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p014_000.pas; ./pas ./test/AllRules/p014_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p015_000.pas; ./pas ./test/AllRules/p015_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p016_000.pas; ./pas ./test/AllRules/p016_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p017_000.pas; ./pas ./test/AllRules/p017_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p018_000.pas; ./pas ./test/AllRules/p018_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p019_000.pas; ./pas ./test/AllRules/p019_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p020_000.pas; ./pas ./test/AllRules/p020_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p021_000.pas; ./pas ./test/AllRules/p021_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p022_000.pas; ./pas ./test/AllRules/p022_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p023_000.pas; ./pas ./test/AllRules/p023_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p024_000.pas; ./pas ./test/AllRules/p024_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p025_000.pas; ./pas ./test/AllRules/p025_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p026_000.pas; ./pas ./test/AllRules/p026_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p027_000.pas; ./pas ./test/AllRules/p027_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p028_000.pas; ./pas ./test/AllRules/p028_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p029_000.pas; ./pas ./test/AllRules/p029_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p030_000.pas; ./pas ./test/AllRules/p030_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p031_000.pas; ./pas ./test/AllRules/p031_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p032_000.pas; ./pas ./test/AllRules/p032_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p033_000.pas; ./pas ./test/AllRules/p033_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p034_000.pas; ./pas ./test/AllRules/p034_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p035_000.pas; ./pas ./test/AllRules/p035_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p036_000.pas; ./pas ./test/AllRules/p036_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p037_000.pas; ./pas ./test/AllRules/p037_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p038_000.pas; ./pas ./test/AllRules/p038_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p039_000.pas; ./pas ./test/AllRules/p039_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p040_000.pas; ./pas ./test/AllRules/p040_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p041_000.pas; ./pas ./test/AllRules/p041_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p042_000.pas; ./pas ./test/AllRules/p042_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p043_000.pas; ./pas ./test/AllRules/p043_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p044_000.pas; ./pas ./test/AllRules/p044_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p045_000.pas; ./pas ./test/AllRules/p045_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p046_000.pas; ./pas ./test/AllRules/p046_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p047_000.pas; ./pas ./test/AllRules/p047_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p048_000.pas; ./pas ./test/AllRules/p048_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p049_000.pas; ./pas ./test/AllRules/p049_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p050_000.pas; ./pas ./test/AllRules/p050_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p051_000.pas; ./pas ./test/AllRules/p051_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p052_000.pas; ./pas ./test/AllRules/p052_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p053_000.pas; ./pas ./test/AllRules/p053_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p054_000.pas; ./pas ./test/AllRules/p054_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p055_000.pas; ./pas ./test/AllRules/p055_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p056_000.pas; ./pas ./test/AllRules/p056_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p057_000.pas; ./pas ./test/AllRules/p057_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p058_000.pas; ./pas ./test/AllRules/p058_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p059_000.pas; ./pas ./test/AllRules/p059_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p060_000.pas; ./pas ./test/AllRules/p060_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p061_000.pas; ./pas ./test/AllRules/p061_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p062_000.pas; ./pas ./test/AllRules/p062_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p063_000.pas; ./pas ./test/AllRules/p063_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p064_000.pas; ./pas ./test/AllRules/p064_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p065_000.pas; ./pas ./test/AllRules/p065_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p066_000.pas; ./pas ./test/AllRules/p066_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p067_000.pas; ./pas ./test/AllRules/p067_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p068_000.pas; ./pas ./test/AllRules/p068_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p069_000.pas; ./pas ./test/AllRules/p069_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+echo   p070_000.pas; ./pas ./test/AllRules/p070_000.pas && printf "*******  Executed Successfully  ******\n" || printf "!!!!!!!         ERRORS         !!!!!!!\n"; echo;
+
+
+echo 
+echo **End of Tests**
+echo
+echo

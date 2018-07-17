@@ -1,0 +1,26 @@
+
+          lda       0         05        
+          ldc       i         1         
+          sti       i                   
+          lda       0         06        
+          ldc       i         2         
+          sti       i                   
+          lda       0         07        
+          ldc       i         3         
+          sti       i                   
+          lvi       0         05        
+          lvi       0         06        
+          les       i                   
+          lda       0         05        
+          lvi       0         07        
+          sti       i                   
+          lda       0         06        
+          lvi       0         07        
+          sti       i                   
+          fjp                 L00004    
+          ujp                 L00005    
+L00004                                  
+L00005                                  
+          lda       0         05        
+          ldc       i         29        
+          sti       i                   

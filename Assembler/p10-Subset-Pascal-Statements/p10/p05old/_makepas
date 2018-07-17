@@ -1,0 +1,43 @@
+#-------------------------------------------------------------------------------
+# Author: Gregory Levy
+# Student ID: *20444120
+# E-Mail: glevy@uco.edu
+# Course: CMSC 2123 – Discrete Structures
+# CRN: 21061, Spring, 2017
+# Project: p02
+# Due: February 10, 2017
+# Account: tt049
+# 
+# Author: William Bohanan
+# Student ID: *20276952
+# E-Mail: wbohanan@uco.edu
+# Course: CMSC 4173 – Translator Design
+# CRN: 25838, Spring, 2018
+# Project: p02
+# Due: February 10, 2017
+# Account: tt067
+#--------------------------------------------------------------------------------
+  
+#--------------------------------------------------------------------------------
+# _makepas
+# This bash script removes any files built by previous compilation processes and
+# calls the make file _makepascal to compile the project
+#--------------------------------------------------------------------------------
+
+sh _clean
+
+#echo
+#echo make Factor
+#make -f _makeFactor
+
+echo
+echo make Semantics
+make -f _makeSemantics
+
+echo
+echo make Symbol Table
+make -f _makeSymbolTable
+
+echo
+echo make Pascal
+make -f _makepascal

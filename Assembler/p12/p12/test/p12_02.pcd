@@ -1,0 +1,35 @@
+
+L00001    ent       sp        L00002    
+          ent       ep        L00003    
+          ldc       i         1         
+          ldc       i         2         
+          csp                 wri       
+          ldc       c         ','       
+          csp                 wrs       
+          ldc       i         2         
+          ldc       i         2         
+          csp                 wri       
+          ldc       c         ','       
+          csp                 wrs       
+          ldc       s         ' buckle my shoe.'
+          csp                 wrs       
+          csp                 wln       
+          ldc       i         3         
+          ldc       i         2         
+          csp                 wri       
+          ldc       c         ','       
+          csp                 wrs       
+          ldc       i         4         
+          ldc       i         2         
+          csp                 wri       
+          ldc       c         ','       
+          csp                 wrs       
+          ldc       s         ' shut the door.'
+          csp                 wrs       
+          csp                 wln       
+          rtn       p                   
+#define   L00002    4                   
+#define   L00003    6                   
+          mst       0                   
+          cup       0         L00001    
+          stp                           

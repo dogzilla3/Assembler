@@ -1,0 +1,17 @@
+
+          lda       0         00        
+          ldc       i         5         
+          lvr       0         05        
+          ldc       i         32        
+          flt                           
+          sbr                           
+          flt                           
+          mpr                           
+          ldc       r         9.0       
+          dvr                           
+          sti       r                   
+          lda       0         05        
+          ldc       i         77        
+          mst       0                   
+          cup       1         L00004    
+          sti       r                   

@@ -1,0 +1,57 @@
+#------------------------------------------------------------------------------
+#Author: Gregory Levy
+#Student ID: *20444120
+#E-Mail: glevy@uco.edu
+#Course: CMSC 2123 – Discrete Structures
+#CRN: 21061, Spring, 2017
+#Project: p02
+#Due: February 10, 2017
+#Account: tt049
+#
+#Author: William Bohanan
+#Student ID: *20276952
+#E-Mail: wbohanan@uco.edu
+#Course: CMSC 4173 – Translator Design
+#CRN: 25838, Spring, 2018
+#Project: p02
+#Due: February 10, 2017
+#Account: tt067
+#-------------------------------------------------------------------------------
+
+#-------------------------------------------------------------------------------
+#_checkOutputs
+#This bash script checks our pcd files vs know good files
+#-------------------------------------------------------------------------------
+
+echo 
+echo 
+echo **Begin File Check**
+echo 
+
+echo   p12_01.pcd; ./FileChecker ./test/p12_01.pcd ./pcdMaster/p12_01.pcd; echo;
+echo   p12_02.pcd; ./FileChecker ./test/p12_02.pcd ./pcdMaster/p12_02.pcd; echo;
+echo   p12_03.pcd; ./FileChecker ./test/p12_03.pcd ./pcdMaster/p12_03.pcd; echo;
+echo   p12_04.pcd; ./FileChecker ./test/p12_04.pcd ./pcdMaster/p12_04.pcd; echo;
+echo   p12_05.pcd; ./FileChecker ./test/p12_05.pcd ./pcdMaster/p12_05.pcd; echo;
+echo   p12_06.pcd; ./FileChecker ./test/p12_06.pcd ./pcdMaster/p12_06.pcd; echo;
+echo   p12_07.pcd; ./FileChecker ./test/p12_07.pcd ./pcdMaster/p12_07.pcd; echo;
+echo   p12_08.pcd; ./FileChecker ./test/p12_08.pcd ./pcdMaster/p12_08.pcd; echo;
+echo   p12_09.pcd; ./FileChecker ./test/p12_09.pcd ./pcdMaster/p12_09.pcd; echo;
+echo   p12_10.pcd; ./FileChecker ./test/p12_10.pcd ./pcdMaster/p12_10.pcd; echo;
+echo   p12_11.pcd; ./FileChecker ./test/p12_11.pcd ./pcdMaster/p12_11.pcd; echo;
+echo   p12_12.pcd; ./FileChecker ./test/p12_12.pcd ./pcdMaster/p12_12.pcd; echo;
+echo   p12_13.pcd; ./FileChecker ./test/p12_13.pcd ./pcdMaster/p12_13.pcd; echo;
+echo   p12_14.pcd; ./FileChecker ./test/p12_14.pcd ./pcdMaster/p12_14.pcd; echo;
+echo   p12_15.pcd; ./FileChecker ./test/p12_15.pcd ./pcdMaster/p12_15.pcd; echo;
+echo   p12_16.pcd; ./FileChecker ./test/p12_16.pcd ./pcdMaster/p12_16.pcd; echo;
+echo   p12_17.pcd; ./FileChecker ./test/p12_17.pcd ./pcdMaster/p12_17.pcd; echo;
+echo   p12_18.pcd; ./FileChecker ./test/p12_18.pcd ./pcdMaster/p12_18.pcd; echo;
+echo   p12_19.pcd; ./FileChecker ./test/p12_19.pcd ./pcdMaster/p12_19.pcd; echo;
+echo   p12_20.pcd; ./FileChecker ./test/p12_20.pcd ./pcdMaster/p12_20.pcd; echo;
+echo   p12_21.pcd; ./FileChecker ./test/p12_21.pcd ./pcdMaster/p12_21.pcd; echo;
+
+
+echo 
+echo **End File Check**
+echo
+echo

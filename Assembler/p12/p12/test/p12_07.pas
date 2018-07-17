@@ -1,0 +1,14 @@
+{---------------------------------------------------------------------}
+{Author: Thomas R Turner                                              }
+{E-Mail: trturner@uco.edu                                             }
+{Date:   April, 2018                                                  }
+{Copyright April, 2018 by Thomas R Turner                             }
+{Do not reproduce without permission from Thomas R Turner             }
+{---------------------------------------------------------------------}
+program p12_07;
+  var i:integer;
+begin{p12_07}
+  readinteger(i);
+  writeinteger(i,4);
+  writeln
+end{p12_07}.

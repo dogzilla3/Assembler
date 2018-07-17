@@ -1,0 +1,16 @@
+
+          ldc       i         2         
+          lda       0         05        
+          ldc       i         1         
+          sbi                           
+          ixa                 1         
+          ldc       r         3.14159   
+          sti       r                   
+          lda       0         015       
+          ldc       i         2         
+          lda       0         05        
+          ldc       i         1         
+          sbi                           
+          ixa                 1         
+          ind       r                   
+          sti       r                   

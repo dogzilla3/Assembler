@@ -1,0 +1,5 @@
+
+          ldc       s         'Hello, I love you.'
+          csp                 wln       
+          mst       0                   
+          cup       0         L00004    

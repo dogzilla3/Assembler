@@ -1,0 +1,13 @@
+dir = Semantics/
+ST = slist.h \
+	 SymbolTable/Typ.h \
+	 SymbolTable/Sym.h \
+	 SymbolTable/Label.h \
+	 SymbolTable/Namespace.h \
+	 SymbolTable/Locality.h \
+	 SymbolTable/LocalityStack.h \
+	 SymbolTable/SymbolTable.h
+in = -I.. ../SymbolTable -I.. ../$(dir)
+
+#--------------------------------------------------------------------------------------
+all:			factor.o 

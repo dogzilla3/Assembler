@@ -1,0 +1,17 @@
+dir = Semantics/
+ST = slist.h \
+	Height.h \
+	 SymbolTable/Typ.h \
+	 SymbolTable/Sym.h \
+	 SymbolTable/Label.h \
+	 SymbolTable/Namespace.h \
+	 SymbolTable/Locality.h \
+	 SymbolTable/LocalityStack.h \
+	 SymbolTable/SymbolTable.h
+in = -I.. ../SymbolTable -I.. ../$(dir)
+
+#--------------------------------------------------------------------------------------
+all:		Semantics.o
+#--------------------------------------------------------------------------------------
+Semantics.o:		$(dir)Semantics.cpp $(dir)Semantics.h
+					g++ -c -g -o $(dir)Semantics.o $(dir)Semantics.cpp 
